@@ -55,7 +55,7 @@ for i, (model_gen, (trainset_name, trainset, testset)) in enumerate(itertools.pr
     model = model_gen()
     if data.use_cuda:
         model.cuda()
-    model_name =  f'Model_{model.__class__.__name__}-trainset_{trainset_name}'
+    model_name =  'Model_{}-trainset_{}'.format(model.__class__.__name__, trainset_name)
     print('=' * 80)
     print(i + 1, model_name)
     print('=' * 80)
@@ -71,7 +71,7 @@ for i, (model_gen, (trainset_name, trainset, testset)) in enumerate(itertools.pr
     for epoch in range(n_epoch_start, n_epoch_end):
         print()
         print('Epoch', epoch + 1, flush=True)
-        fname = f'checkpoints/{model_name}-epoch_{epoch + 1}'
+        fname = 'checkpoints/{}-epoch_{}'.format(model_name, epoch + 1)
         if os.path.isfile(fname):
             model = torch.load(fname, map_location='cuda' if data.use_cuda else 'cpu')
             continue
