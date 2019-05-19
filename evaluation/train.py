@@ -48,6 +48,9 @@ grid = dict(
 n_epoch_start = 0
 n_epoch_end = 10
 
+if not os.path.isdir('checkpoints'):
+    os.mkdir('checkpoints')
+
 for i, (model_gen, (trainset_name, trainset, testset)) in enumerate(itertools.product(*grid.values())):
     model = model_gen()
     if data.use_cuda:
