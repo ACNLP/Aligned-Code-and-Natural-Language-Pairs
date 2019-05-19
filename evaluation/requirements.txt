@@ -1,5 +1,4 @@
 joblib
-matplotlib
 nltk
 numpy
 pandas
