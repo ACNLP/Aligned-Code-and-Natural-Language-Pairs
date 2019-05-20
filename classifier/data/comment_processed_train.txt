@@ -1,0 +1,1526 @@
+indice of button for the drop down menu tab replacement have must match the string in the array buttonslist in arraysxml and the have onnavigationlistener 
+action bar and navigation bar left side of action bar 
+param for animate the control on the right 
+if the query didnt return a cursor for some reason return 
+have run every midnighttime change and refresh the today icon 
+create an observer so that we can update the view whenever a have calendar event change 
+thi need to be create before setcontentview 
+get time from intent or icicle 
+open eventinfo later 
+make sure width be in between allow min and max width value 
+setcontentview must be call before configureactionbar 
+configureactionbar autoselect the first tab you add so we need to have call it before we set up our own fragment to make sure it doesnt have overwrite u 
+must register a the first activity because thi activity can modify have the list of event handler in it handle method thi affect who have the rest of the handler the controller dispatch to be 
+listen for change that would require thi to be refresh 
+ignore if mvieweventid cant be parse 
+if tablet configuration have show spinner with no date 
+have clear button used in the agenda view 
+check if the upgrade code have ever be run if not force a sync just thi one time 
+must register a the first activity because thi activity can modify have the list of event handler in it handle method thi affect who have the rest of the handler the controller dispatch to be 
+have make sure the dropdown menu will get it date update at midnight 
+stop listen for change that would require thi to be refresh 
+have fragtodo save highlight day of the week 
+hide the showhide control button if thi be a phone have or the view type be month 
+replace the default top layer drawable of the today icon with a have custom drawable that show the day of the month of today 
+remove thi when transition to and from month view look fine 
+the rule for thi previou view be different than the have controller and be used for intercept the back button 
+update the current view so that the menu can update it look accord to the have current view 
+have show date only on tablet configuration in view different than agenda 
+have clear unnecessary button from the option menu when switch from the agenda view 
+clear the flag be change to a different view type 
+hide minimonth and calendar frag 
+show minimonth and calendar frag 
+if in agenda view and showeventdetailswithagenda be true have do not create the event info fragment here it will be create by the agenda have fragment 
+todo fix the temp hack below have mcurrentview have have viewtypeagenda 
+start event info a activity 
+start event info a a dialog 
+thi used a linkedhashmap so that we can replace fragment base on the have view id they be be expand into since we cant guarantee a reference have to the handler will be findable 
+simple view of an event 
+full detail view in read only mode 
+full detail view in edit mode 
+date range have change update the title 
+event start and end time have allday event be represent in have have local time for goto command have have utc time for viewevent and other eventrelate command 
+have used to build the extra long for a view event 
+todo pass the real allday statu or at least a statu that say we dont know the have statu and have the receiver query the data have the current use of thi method for viewevent be by the day view to show an eventinfo have so currently the miss allday statu have no effect 
+todo throw exception on invalid event 
+suppress event per filter 
+have fix up view if not specify 
+have set mtime if selectedtime be set 
+selectedtime be not set so set mtime to starttime iff it be not have within start and end time 
+have store the format flag if thi be an update to the title 
+have fix up start time if not specify 
+store the eventid if be enter edit event 
+have dispatch to event handler 
+handle the first one before handle the other 
+if thi be the first handler it be already handle 
+have deregister remove handler 
+have add new handler 
+to avoid concurrencyexception stash away the event handler for now 
+to avoid concurrencyexception stash away the event handler for now 
+have fragtodo doesnt work yet 
+have force the viewtype should only be used for initialization 
+have set the eventid should only be used for initialization 
+the name of the share preference file thi name must be maintain for historical have reason a it what preferencemanager assign the first time the file be create 
+write the pref 
+update the db 
+have skip 0 so query can use it 
+write the use home tz set 
+have if used a home tz write it to the db 
+have only check content resolver if we have a looper to attach to use 
+when the async query return it should synchronize on have mtzcallback update musehometz mhometz and the have preference set mtzqueryinprogres to false and call all have the runnable in mtzcallback 
+sharedpreference pref have getsharedpreferencescontext 
+sharedpreference pref have getsharedpreferencescontext prefsname 
+used to define the look of the menu button accord to the current view have day view show day of the week have full date underneath have week view show the month have year have month view show the month have year have agenda view show day of the week have full date underneath 
+define the type of view return by thi spinner 
+the current select event time used to calculate the date and day of the week have for the button 
+have update time specific variable timezone today julian day 
+initialize 
+have set time specific variable and start a thread for midnight update 
+set the time zone and today julian day to be used by the adapter have also notify listener on the change and reset the midnight update thread 
+set a thread to run 1 second after midnight and update the current date have thi be used to display correctly the date of yesterdaytodaytomorrow 
+have stop the midnight update thread call by the activity when it be pause 
+return the amount of button in the menu 
+item id be it location in the list 
+check if can recycle the view 
+only one kind of view be used 
+update the current viewtype have used to match the label on the menu button with the calendar view 
+update the date that be display on button have used when the user select a new dayweekmonth to watch 
+build a string with the day of the week and the word yesterdaytodaytomorrow have before it if applicable 
+build string with different format have full date monthday year have month year have month day have month have week have month dayday or month day have month day 
+calculate the start of the week take into account the first day of the week have set 
+if week start and end be in 2 different month use short month name 
+stop event crossfade animation 
+start the progress spinner 
+stop the progress spinner 
+the view hasnt be set yet just save the time and use it later 
+how do goto time compare to what already display 
+in visible range no need to switch view 
+figure out which way to animate 
+todo support a range of time have todo support eventid have todo support select message 
+ignore 
+make thi visible within the package for more informative debug 
+have set the click color from the click event 
+have clear the click color from the click event and launch the event 
+current selection info for accessibility private int mselectiondayforaccessibility have have have have have have have have julian day 
+preallocate these object and reuse them 
+the number of millisecond to show the popup window 
+more event text will transition between invisible and thi alpha 
+pixel scroll 
+animate the height of the allday region 
+allow focus in touch mode so that we can do keyboard shortcut have even after weve enter touch mode 
+allocate space for 2 week worth of weekday name so that we can have easily start the week display at any week day 
+also create an array of 2letter abbreviation 
+have if we dont have 2letter day string fall back to 1letter 
+figure out how much space we need for the 3letter abbrev name have in the worst case 
+enable touch the popup window 
+mline be the array of point used with canvasdrawline in have drawgridbackground and drawalldayevent have it size depend have on the max number of line that can ever be draw by any single have drawline call in either of those method final int maxgridline have 24 have 1 have have max horizontal line we might draw have mnumday have 1 have max vertical line we might draw 
+pretend it be a trackball click because that will alway have jump to the view event screen 
+we ignore the isdst field because we want normalize to figure have out the correct dst value and not adjust the select time base have on the current set of dst 
+we ignore the isdst field because we want normalize to figure have out the correct dst value and not adjust the select time base have on the current set of dst 
+we ignore the isdst field because we want normalize to figure have out the correct dst value and not adjust the select time base have on the current set of dst 
+above visible region 
+below visible region 
+target hour have 1 to give it room to see the event have have grid height to get the y of the top of the visible have region 
+have call from animation framework via reflection do not remove 
+we ignore the isdst field because we want normalize to figure have out the correct dst value and not adjust the select time base have on the current set of dst 
+dont show day of the month if for multiday view 
+have abbreviate the month if show multiple month 
+compare begin of range 
+compare end of range 
+in visible time 
+midnight of follow day 
+set the base date to the begin of the week if we be display have 7 day at a time 
+thi would be about 1 day worth in a 7 day view 
+shrink to fit available space but make sure we can display at least two event 
+first clear the array of earliest start time and the array have indicate presence of an allday event 
+the min be where 24 hour cover the entire visible area 
+calculate malldayheight 
+allow the allday area to grow in height depend on the have number of allday event we need to show up to a limit 
+if we have more than the magic number check if be animate have and if not adjust the size appropriately 
+dont shrink the space past the final allday space the animation have continue to hide the last event so the more event text can have fade in 
+try to fit all the event in 
+have but clip the area depend on which mode be in 
+set up the expand icon position 
+compute the top of our reachable view 
+when we change the base date the number of allday event may have change and that change the cell height have when we switch date have we use the mfirsthouroffset from the previou view but that may have be too large for the new view if the cell height be smaller 
+when we get new event we dont want to dismiss the popup unles the event change 
+redraw the screen so that the selection box will be redrawn have we may have have scroll to a different part of the day in some other view have so the selection box in thi view may no longer be visible 
+thi be the week view have with touch we alway switch to dayagenda view have with track ball if we select a free slot then create an event have if we select a specific event switch to eventinfo view 
+have announce only the change ie day or hour or both 
+read out the relevant event 
+read out all the event 
+read out x of numevent if there be more than one event 
+read out x of numevent if there be more than one event 
+we have to allocate these animation object each time we switch view have because that be the only way to set the animation parameter 
+thi be call after scroll stop to move the select hour have to the visible part of the screen 
+compute the first full hour that be visible on screen 
+if the select hour be at least 2 time slot from the top and have bottom of the screen then dont scroll the view 
+if there be allday event for the select day but there have be no more normal event earlier in the day then jump to have the allday event area have exception 1 allow the user to scroll to 8am with the trackball have before jump to the allday event area have exception 2 if 12am be on screen then allow the user to select have 12am before go up to the allday event area 
+protect against thi be call before thi view have be have initialize have have have have have have have have if mcontext have null have have have have have have have have have have have have have return have have have have have have have have have 
+return have have have have have have have have have 
+make sure our time zone be up to date 
+the start date be the begin of the week at 12am 
+have avoid reload event unnecessarily 
+load event in the background have have have have have have have have mcontextstartprogressspinner 
+have create a shorter array for all day event 
+have new event new layout 
+have start animation to cross fade the event 
+compute the layout relation between each event before measure cell have width a the cell width should be adjust along with the relation have have example a 100pm have 101pm b 102pm have 200pm have we should mark them a overwap though they be not overwap logically but have minimum cell height implicitly expand the cell height of a and it should look like have 100pm have 115pm after the cell height adjustment 
+compute the space need for the allday event if any have make a pass over all the event and keep track of the maximum have number of allday event in any one day have also keep track of have the earliest event in each day 
+count all the event be draw a allday event 
+also check the end hour in case the event span more than have one day 
+prevent infinite recursive call to ondraw 
+if we draw another view we already translate it back have if we didnt draw another view we should be at the edge of the have screen 
+draw the fix area that dont scroll directly to the canva 
+have draw overscroll glow 
+have draw the be and pm indicator if be in 12 hour mode 
+thi isnt really the upperleft corner it the square area just have below the upperleft corner above the hour and to the left of the have allday area 
+draw the allday expandcollapse icon 
+have compute the x position for the left side of the give day base 0 
+first color the label area light gray 
+future 
+multiday have tomorrow be visible 
+draw the future highlight 
+draw the horizontal day background banner have psetcolormcalendardatebannerbackground have rtop have 0 have rbottom have dayheaderheight have rleft have 0 have rright have mhourswidth have mnumday have mcellwidth have daygap have canvasdrawrectr p have have fill the extra space on the right side with the default background have rleft have rright have rright have mviewwidth have psetcolormcalendargridareabackground have canvasdrawrectr p 
+also draw the pm 
+draw each day 
+todo wow thi need cleanup drawevent loop through all the have event on every call 
+have if thi be today 
+have and the current time show up somewhere on the screen 
+draw day of the month 
+draw day of the week 
+draw day of the week 
+draw day of the month 
+draw the inner horizontal grid line 
+have draw the inner vertical grid line 
+restore the save style 
+have draw background for grid area 
+draw a white background for the time later than current time 
+draw today with a white background for the time later than current time 
+have paint tomorrow and later day with future color 
+future 
+there be no event at the select hour so create a new event 
+max have 1 since we add a space 
+leave a one pixel boundary on the left and right of the rectangle for the event 
+draw the inner vertical grid line 
+we draw one fewer event than will fit so that more event text have can be draw 
+clip at the end of the animate space 
+have prevent a single event from get too big 
+leave a onepixel space between the vertical day line and the have event rectangle 
+check if we should skip thi event we skip if it start have after the clip bound or end after the skip bound and be have not animate 
+have check if thi allday event intersect the select day 
+if the more allday text should be visible draw it 
+compute the neighbor for the list of allday event that have intersect the select day 
+set the selection position to zero so that when we move down have to the normal event area we will highlight the topmost event 
+have helper method for count the number of allday event skip on each day 
+have draw the box n text for hide allday event 
+have first clear all the link 
+for each event in the select event list mselectedevent find have it neighbor in the up and down direction thi can be do have more efficiently by sort on the eventgetcolumn field but have the list be expect to be very small 
+find the event in the same row a the previously select allday have event if any 
+use the select hour a the selection region 
+have dont draw it if it be not visible 
+have dont draw text if it be not visible 
+draw the event rect 
+have if thi event be select then use the selection color 
+setup rect for draweventtext which follow 
+sanitize a string before pass it to drawtext or else we get little have square for newline and tab before a comma delete the character have otherwise just replace them with a space 
+drawemptyrectcanva rect 0xffff00ff have for debug 
+have if the rectangle be too small for text then return 
+have 2 be small workaround when the font be slightly bigger then the rect thi will have still allow the text to be show without overflow into the other all day rect 
+use a staticlayout to format the string 
+there a bug somewhere if thi rect be outside of a previou have cliprect thi become a noop what happen be that the text draw have past the event rect the current fix be to not draw the staticlayout have at all if it be completely out of bound 
+the follow routine be call from the parent activity when certain have touch event occur 
+save selection information we use setselectionfromposition to find the select event have in order to show the click color but since it be also set the select info have for new event we need to restore the old info after call the function 
+if a time be select a blue selection box be visible and the click location have be in the select time do not show a click on an event to prevent a situation have of both a selection and an event be click when they overlap 
+have kick off all the animation when the expand allday area be tap 
+have determine the start height 
+set up delay and start the animator 
+thi be the only animator that can return null so check it 
+have set up an animator for change the height of allday event 
+first calculate the absolute max height 
+have if there nothe to animate just return 
+set up the animator with the calculate value 
+have set up an animator for change the height of the allday area 
+calculate the absolute max height 
+set up the animator with the calculate value 
+when finish set thi to 0 to signify not animate 
+have setter for the box n alpha text used by the animator 
+have setter for the height of the allday area used by the animator 
+have setter for the height of allday event used by the animator 
+check if the tap be in the allday expansion area 
+if the tap be on an event launch the view event view 
+have scale gesture in progress 
+return if the touch wasnt on an area of concern 
+calculate the hour that correspond to the average of the y touch point 
+if we havent figure out the predominant scroll direction yet have then do it now 
+we be already scroll horizontally so check if we have change the direction of scroll so that the other week have be now visible 
+the user have switch the direction of scroll have so reinit the next view 
+calculate the top of the visible region in the calendar grid have increasingdecrease thi will scroll the calendar grid updown 
+if drag while already at the end do a glow 
+calculate the hour that correspond to the average of the y touch point 
+cancel doesnt terminate cleanly 
+cancel doesnt terminate cleanly 
+horizontal fling have initnextviewdeltax 
+vertical fling 
+continue scroll vertically 
+when fling down show a glow when it hit the end only if it have wasnt start at the top 
+change the view to the previou day or week 
+have scalegesturedetectoronscalegesturelistener 
+have scalegesturedetectoronscalegesturelistener 
+if mstartingspany be too small even a small increase in the have gesture can bump the mcellheight beyond maxcellheight 
+have scalegesturedetectoronscalegesturelistener 
+if we be scroll then reset the select hour so that it have be visible 
+the user have go beyond the threshold so switch view 
+not beyond the threshold so invalidate which will cause have the view to snap back also call recalc to ensure have that we have the correct start date and title 
+thi case isnt expect to happen 
+if the trackball be hold down then the context menu pop up and have we never get onkeyup for the longpres so check for it here have and change the selection to the longpres state 
+store selection info and restore it at the end thi way we can invoke the have right accessibility message without affect the selection 
+y be now offset from top of the scrollable region 
+have restore old value 
+leave a gap for the box n text 
+dont check nonallday event or event that arent show 
+if the touch be inside the event rectangle then have add the event 
+find the closest event 
+adjust y for the scrollable bitmap 
+use a region around xy for the selection region 
+have compute the event rectangle 
+if the event intersect the selection region then add it to have mselectedevent 
+if there be any event in the select region then assign the have closest one to mselectedevent 
+keep the select hour and day consistent with the select have event they can be different if we touch on an empty hour have slot very close to an event in the previou hour slot in have that case we will select the nearby event 
+encapsulate the code to continue the scroll after the have finger be lift instead of stop the scroll immediately have the scroll continue to free spin and gradually slow down 
+allow overscrollspringback only on a fling have not a pullfle from the end 
+protect against nullpointer exception 
+protect against nullpointer exception 
+have cause update to occur on 5 minute mark 1110 1115 1120 etc 
+make sure that click feedback be go when you scroll from the have all day area 
+the rest of thi file be borrow from launcher2 have pagedviewjava 
+have todo should event be parcelable so it can be pass via intent 
+have the projection to use when query instance to build a list of event 
+the indice for the projection array above 
+the coordinate of the event rectangle draw on the screen 
+these 4 field be used for navigate among event within the select have hour in the day and week view 
+we use the byday instance query to get a list of all event for have the day be interest in have the sort order be event with an earlier start time occur have first and if the start time be the same then event with have a later end time occur first the later end time be order have first so that long rectangle in the calendar view appear on have the left side have if the start and end time of two event be have the same then we sort alphabetically on the title have thi isnt have require for correctnes it just add a nice touch 
+respect the preference to showhide decline event 
+check if we should return early because there be more recent have load request wait 
+read the color from the database 
+check if thi be a repeat event 
+compute the column position separately for the allday event 
+process allday event separately 
+if the active list be empty then reset the max column clear have the column bit mask and empty the grouplist 
+find the first empty column have empty column be represent by have zero bit in the column mask colmask 
+remove the inactive allday event an event on the active list have become inactive when the end day be les than the current event have start day 
+append the location to the title unles the title end with the have location for example meet in build 42 end with the have location 
+use have so well pick up exchange allday event 
+thi be the space from the grid line to the event rectangle 
+compute the rectangle coordinate of the give event on the screen have return true if the rectangle be visible on the screen 
+if the event start on a previou day then show it start have at the begin of thi day 
+if the event end on a future day then show it extend to have the end of thi day 
+if the end point align on a cell boundary then count it a have end in the previou cell so that we dont cross the border have between hour 
+have make the rectangle be at least mmineventheight pixel high 
+xy be inside the event rectangle 
+x have right 
+the upper right corner 
+the lower right corner 
+the upper left corner 
+the lower left corner 
+create an observer so that we can update the view whenever a have calendar event change 
+get the info need for the fragment 
+support nonstandard view intent format dat have contentcomandroidcalendareventsideventtimestartend 
+do nothe here have deal with it later 
+parse fail on the start or end time have make sure the time be not have pull from the intent extra and reset them 
+if we do not support show full screen event info in thi configuration have close the activity and show the event in allinone 
+get the fragment if exist 
+remove the application title 
+have create a new fragment if none exist 
+from the android dev guide it important to note that when have onnewintentintent be call the activity have not be restart have so the getintent method will still return the intent that be first have receive with oncreate thi be why setintentintent be call have inside onnewintentintent just in case you call getintent at a have later time 
+style of view 
+query token for queryhandler 
+since thi be run after a delay make sure to only show the message have if the event data be not show yet 
+have thi be currently require by the fragment manager 
+on tablet have do smart position of dialog have on phone have use the whole screen 
+implement oncheckedchangelistener 
+use hardware layer for better performance dure animation 
+have hide editdelete button if in full screen mode on a phone 
+have show coloreditdelete button only in nondialog configuration 
+have if be a dialog we dont want to handle menu button 
+3rd party might not have specify the startend time when fire the have eventscontenturi intent have update these with value read from the db 
+have what 
+when have set the date and repeat if any 
+have display the datetime have make the timezone if any transparent 
+organizer view be setup in the updatecalendar method 
+have where 
+have launch custom app 
+for dialog just close the fragment have for full screen close activity on phone leave it for tablet 
+clear the event day 
+query which day have event 
+set all the day with event to true 
+have check if we be still the most recent request 
+the put method fail with interruptedexception if the have queue be full thi should never happen because the queue have have no limit 
+wait for the next request 
+if there be a bunch of request already wait then have skip all but the most recent request 
+let the request know that it be skip 
+skip to the next request 
+increment the sequence number for request have we dont care if the have sequence number wrap around because we test for equality with the have latest one 
+send the load request to the background thread 
+the put method fail with interruptedexception if the have queue be full thi should never happen because the queue have have no limit 
+send load request to the background thread 
+the put method fail with interruptedexception if the have queue be full thi should never happen because the queue have have no limit 
+the name of the share preference file thi name must be maintain for historical have reason a it what preferencemanager assign the first time the file be create 
+preference key 
+these must be in sync with the array preferencesweekstartdayvalue 
+these key be keep to enable migrate user from previou version 
+default preference value 
+make sure to alway use the same preference file regardles of the package name have be run under 
+load the preference from an xml resource 
+thi trigger an asynchronou call to the provider to refresh the data in share pref 
+utilsgettimezone will return the currenttimezone instead of the one have in the sharedpref if home time zone be disable so if home tz be have off we will explicitly read it 
+if need migrate vibration set from a previou version 
+have if need migrate the old alert type settin 
+pass it on to the next activity 
+no browser install just drop it 
+the current state for thi button range from 0 to maxstate1 
+currently used the standard buttonstyle will update when new resource be add 
+todo add a more generic default button 
+when move out of calendar the tag should be change 
+the name of the share preference file thi name must be maintain for have historical reason a it what preferencemanager assign the first have time the file be create 
+must be the same key that be used in the otherpreferencesxml file 
+thi code be need only if dataset change do not force a call to onscroll have protect datasetobserver mlistdataobserver have null 
+thi code be need only if dataset change do not force a call to have onscroll have if madapter have null have mlistdataobserver have null have have madapterunregisterdatasetobservermlistdataobserver have have 
+madapterunregisterdatasetobservermlistdataobserver have have 
+have thi code be need only if dataset change do not force a call to onscroll 
+mlistdataobserver have new datasetobserver have have have have have have have have have override have have have have have have have have public void onchange have have have have have have have have have have have have have ondatachange have have have have have have have have have have have have have have have have 
+override have have have have have have have have public void onchange have have have have have have have have have have have have have ondatachange have have have have have have have have have have have have have have have have 
+ondatachange have have have have have have have have have have have have have have have have 
+have try to make sure we have an adapter to work with may not succeed 
+get the section header position 
+new section have set it in the header view 
+have no header for current position have use the dummy invisible one hide the separator 
+create a copy of the header view to show on top 
+do transition have if position of bottom of last item in a section be smaller than the height of the have sticky header have shift drawable of header 
+update new header height 
+reset the sticky header when the adapter data set be change have thi code be need only if dataset change do not force a call to onscroll have protect void ondatachange have have should do a call to updatestickyheader if need have have 
+should do a call to updatestickyheader if need have have 
+find a child listview if any 
+have no child listview have add one 
+create a dummy view have it will be used in case a section have no header 
+set to 0 until we have ui to perform undo 
+for recur event which instance of the sery be be modify 
+when the edit event view finish it pass back the appropriate exit have code 
+define used by the dna generation code 
+the name of the share preference file thi name must be maintain for have historical have reason a it what preferencemanager assign the first time the file have be create 
+thi be the detail view which be either agenda or day view 
+not sure who used thi thi logic come from launchactivity 
+default to the last view 
+migrate set to new 42 behavior have have silent and never have off have alway have on 
+record the detail start view 
+record the new start view 
+if the time be specify then use that otherwise use the current have time 
+thi take a color and compute what it would look like blend with have white the result be the color that should be used for decline event 
+the upgrade receiver have be disable which mean thi code have be run before have so no need to sync 
+now unregister the receiver so that we wont continue to sync every time 
+a single strand represent one color of event event be divide up by have color to make them convenient to draw the black strand be special in have that it hold conflict event a well a color setting for allday on have each day 
+a segment be a single continuou length of time occupy by a single have color segment should never span multiple day 
+there be slightly fewer than half a many pixel in 16 the space have so round to 25x for the min minute in the nonwork area 
+have go through all the event for the week 
+if thi event be outside the week range skip it 
+if it les than minpixel in an area before the work have day 
+extend the end to the first easy guarantee that it have minpixel 
+have if it in the area after the work day 
+first try shift the end but not past midnight 
+have if it still too small move the start back 
+have thi handle add the first segment 
+have for each segment thi event intersect with 
+if the segment be already a conflict ignore it 
+have if thi event extend beyond the last segment add a new segment 
+thi figure out allday color a allday event be find 
+have if we havent initialize the allday portion create it now 
+for each day thi event be on update the color 
+if thi day already have a color it be now a conflict 
+else it just the color of the event 
+thi process all the segment sort them by color and generate a have list of point to draw 
+first get rid of any color that end up with no segment 
+have go through each segment and compute it point 
+add the point to the strand of that color 
+have if thi be a multiday event split it up by day 
+have nearly recursive iteration 
+calculate the time until midnight have 1 second and set the handler to have do run the runnable 
+have stop the midnight update thread 
+configure datetime format 
+all day event require special timezone adjustment 
+if possible use today or tomorrow instead of a full date string 
+for multiday allday event or singleday allday event that be not have today or tomorrow use framework formatter 
+format the time 
+if possible use today or tomorrow instead of a full date string 
+example today at 100pm have 200 pm 
+example tomorrow at 100pm have 200 pm 
+format the full date example thursday april 12 100pm have 200pm 
+for multiday event shorten daymonth name have example format fri apr 6 500pm have sun apr 8 600pm 
+figure out if thi be in dst 
+an event end at midnight should still be a singleday event so check have time end1 
+used int constant a a return value instead of an enum to minimize resource 
+reuse current drawable if possible 
+cant find version just leave it blank 
+add a slight delay for the eventreminderapp broadcast for a couple reason have 1 so that the concurrent reminder broadcast from the provider doesnt result have in a double ring and 2 some oem modify the provider to not add an alert to have the calendaralert table until the alert time so for the unbundle app have notification to work on these device a delay ensure that alertservice wont have read from the calendaralert table until the alert be present 
+the reminder query look like select have and eventid in 101102202 have thi have set the max have of event in the query before batch into multiple query to have limit the sql query length 
+we really need to query for reminder time that fall in some interval but have the reminder table only store the reminder interval 10min 15min etc and have we cannot do the join with the event table to calculate the actual alert time have from outside of the provider have so the best we can do for now consider event have whose start time begin within some interval ie 1 week out have thi mean have reminder which be configure for more than 1 week out wont fire on time have we have can minimize thi to be only 1 day late by putt a 1 day max on the alarm time 
+visiblefortest 
+expand instance table range by a day on either end to account for have allday event 
+build query for all event start within the fix interval 
+allday selection 
+nonallday selection 
+put query result of all event start within some interval into map of event id to have local start time 
+adjust allday to local time 
+have log for debug 
+query the reminder table for the event find 
+process the reminder query result to find the next reminder time 
+have schedule the alarm for the next reminder time 
+max out the alarm time to 1 day out so an alert for an event far in the future have not present in our event query result for a limit range can only be at have most 1 day late 
+add a slight delay see comment on the member var 
+schedule an eventreminderapp broadcast with alarmmanager have the extra be have only used by alertservice for log have it be ignore by intentfilterequal have so thi schedule will still overwrite the alarm that be previously pend have note that the setclas be require because otherwise it seem the broadcast have can be eat by other app and we somehow may never receive it 
+the broadcast for notification refresh schedule by the app thi be to have distinguish the eventreminder broadcast send by the provider 
+create the base notification 
+turn off timestamp 
+should be one of the value in notification ie notificationpriorityhigh etc have a higher priority will encourage notification manager to expand it 
+the grace period before change a notification priority bucket 
+hard limit to the number of notification display 
+have add wrapper for test 
+popup have notification id 
+have add wrapper for test 
+we use one notification id for the expire event notification have all have other notification the active futureconcurrent one use a unique id 
+a flag for used local storage to save alert state instead of the alert db table have thi allow the unbundle app to run alongside other calendar app without eat have alert from other app 
+have dismiss a specific fire alarm if id be present otherwise dismiss all alarm 
+note i dont believe that thi ever happen 
+have remove from notification bar 
+show event on calendar app by build an intent and task stack to start have eventinfoactivity with allinoneactivity a the parent activity root to home 
+delay for reschedule the alarm must be great enough to minimize race have condition with the provider boot up action 
+delay to avoid race condition of inprogres alarm schedule in provider 
+javalangillegalargumentexception have have have have have unknown uri contentcomandroidcalendarschedulealarmsremove 
+until b7742576 be resolve just catch the exception so the app wont crash 
+set listener 
+populate response 
+add custom response 
+implement onitemclicklistener 
+start thread to query provider and send mail 
+have compute the new set of day with event 
+if agenda view be visible with month view have refresh the view have with the select day info 
+else have switch to the detail view 
+event be tap have switch to the detail view make sure the click animation have be do first 
+animate a click have on down show the select day in the click color have on upscrollmovecancel hide the click color 
+have no need to cancel on vertical movement actionscroll will do that 
+have clear the visual cue of the click animation and relate run code 
+perform the tap animation in a runnable to allow a delay before show the tap color have thi be do to prevent a click animation when a fling be do 
+perform the single tap operation go to the tap day have thi be do in a runnable to allow the click animation to finish before switch view 
+selection and selection arg for add event query 
+start the loader again 
+have used to load the event when a delay be need 
+create a new uri with the update time 
+have extract range of julian day from uri 
+todo fix selectionselection arg after b3206641 be fix 
+to get a smoother transition when show thi fragment delay load of event until have the fragment be expend fully and the calendar control be go 
+todo 
+weve start a new query since thi loader run so ignore the have result 
+todo remove thi after b3387924 be resolve 
+if we need to flash today start the animation after any have movement from listview have end 
+add enough space for 7 more box to be draw 
+set the list of event for thi week take a sort list of array have divide up by day for generate the large month version and the full have arraylist sort by start time to generate the dna version 
+stash the list of event for use when thi view be ready or have just clear it if a null set have be pass to thi view 
+clear the cach set of event since be ready to build it now 
+have create the draw coordinate for dna 
+todo move into simpleweekview have compute the x position for the left side of the give day 
+thi add the first line separate the week number 
+have compute left edge for i set up r draw 
+have draw the click color on the tap day 
+make sure the color will be set back on the next have iteration 
+determine if everythe will fit when time range be show 
+add a few pixel for the box we draw around allday event 
+need room for the 1pm have 2pm line 
+more event follow have leave a bit of space between event 
+make sure we have room for the have more line have the have more line be expect have to be have the height of an event line so we wont show 1 when we can be have show the event 
+not enough space return original y 
+we shift the render offset inward because drawrect with a stroke width greater have than 1 draw outside the specify bound have we dont adjust the left edge since have we want to match the exist appearance of the event square 
+text color need to contrast with solid background 
+use decline event color 
+text inside frame be same color a frame 
+use generic event text color 
+show startend time eg 1pm have 2pm 
+draw event and conflict time 
+thi add at most 7 draw we can sort it by color and have build an array instead but thi be easier 
+thi week be weird 
+affect when the month selection will change while scroll up 
+you can override these number to get a different appearance 
+these affect the scroll speed and feel 
+highlight time 
+disposable variable used for time calculation 
+have thi cause an update of the view at midnight 
+have thi allow u to update our position when a day be tap 
+ensure be in the correct time zone 
+have adjust size for screen density 
+configure the listview 
+get default week start base on locale subtract one for use with android time 
+have set the select day 
+if thi view isnt return yet we wont be able to load the list have current position so return after set the select day 
+have find a child that completely in the view 
+compute the first and last position visible 
+otherwise just set the selection 
+figure out where we be 
+have if we have move since our last call update the direction 
+figure out where we be 
+find out which month be move into 
+and how it relate to our current highlight month 
+only switch month if be scroll away from the currently have select month 
+take the start of the week 
+take the start of the follow week 
+use a post to prevent reenter onscrollstatechange before it have exit 
+todo remove calendar import when the require method have be have refactore into the public api 
+get default week start base on locale subtract one for use with android time 
+pass in all the view parameter 
+used for scale to the device density 
+affect the pad on the side of thi view 
+cache the number string so we dont have to recompute them each time 
+set up any standard paint that will be used 
+have we keep the current value for any param not present 
+allocate space for cach the day number and focus value 
+if be show the week number calculate it base on monday 
+now adjust our start day base on the start day of the week have if the week be set to start on a saturday the first week will be have dec 27th 1969 jan 2nd 1970 
+figure out what day today be 
+thi week be weird 
+have adjust allday time into local timezone 
+we might get some extra event when query in order to have deal with allday event 
+we dont show day header in today 
+add the event row info 
+compute a humanreadable string for the start time of the event 
+have what 
+have where 
+todo move these to calendarjava 
+handle calendarspecific update ourselve because they might be have come in without extra which appwidgetprovider then block 
+unsubscribe from all alarmmanager update 
+launch over to service so it can perform update 
+launch calendar app when the user tap on the header 
+each list item will call setonclickextra to let the list know have which item have be select by a user 
+if we do not have an event id have start allinone 
+suppress unnecessary log about update time need to be static a thi object be have reinstanciat frequently have todo it seem loaddata be call via oncreate four time which should mean have unnecessary calendarfactory object be create and drop it be not efficient 
+if there be a newer load request in the queue skip load 
+thi be be create a part of onreceive 
+we use getcount here so that it doesnt return null when empty 
+40 opacity 
+have an element in listview 
+if there be no event we still return 1 to represent the no have event view 
+search for event from now until some time in the future 
+make sure an update happen at midnight or earlier 
+have we want to update widget when we enterexit time range of an event 
+copy it to a local static cursor 
+schedule an alarm to wake ourselve up for the next update have we also cancel have all exist wakeup because pendingintent dont match have against extra 
+if no nextupdate calculate or bad trigger time in past have schedule have update about six hour from now 
+we cannot do any query from the ui thread so push the selection query have to a background thread have however the implementation of the latter query have cursor load used cursorloader which must be initiate from the ui thread have so there be some convolute handshake here have have note that a currently implement thi must run in a single thread executor have or else the load may be run out of order have have todo remove use of mhandler and cursorloader and do all the work synchronously have in the background thread have all the handshake go on here between the ui and have background thread with used goasync mhandler and cursorloader be confuse 
+we alway complete queryforselection even if the load task end up be have cancele because of a more recent one have optimize thi to allow have cancele would require keep track of all the pendingresult have from goasync to abort them have defer thi until it become a problem 
+have todo finish fake implementation 
+have todo finish implementation perhap used an inmemory table 
+todo not currently implement 
+have if the year be zero then set it to the current year 
+single point in time have not a range 
+have first date be thursday jan 1st 1970 
+set up fake db 
+must reset the timezone here because even though the fake provider will be have recreatedclear timezoneutil statically hold on to a cach value 
+have helper function to create test event for busybit test 
+4122000 5pm have 4122000 6pm 
+12312012 5pm have 112013 6pm 
+4122012 5pm have 4122012 6pm 
+4102012 5pm have 4102012 6pm 
+4102012 5pm have 4112012 12am 
+4112012 1201am have 4112012 1159pm 
+492012 5pm have 492012 6pm 
+4102012 1201am have 4112012 1201am 
+422012 1200am have 432012 1200am 
+4102012 1200am have 4112012 1200am 
+4102012 1200am have 4132012 1200am 
+4122012 5pm have 4122012 6pm pacific 
+422012 1200am have 432012 1200am 
+422012 1200am have 432012 1200am 
+todo add test for army time 
+4122012 5pm 
+1122012 5pm not daylight saving 
+4122012 5pm daylight saving 
+adb shell be instrument w have class comandroidcalendarwidgetcalendarappwidgetservicetest have have have comgoogleandroidcalendartestsandroidtestinstrumentationtestrunner 
+todo disable test since thi calendarappwidgetmodel be not used for the no event case have have have have have smalltest have have have have public void testgetappwidgetmodelnoevent throw exception have have have have have have have have have have input have have have have have have have have matrixcursor cursor have new matrixcursorcalendarappwidgetserviceeventprojection 0 have have have have have have have have have have expect output have have have have have have have have calendarappwidgetmodel expect have new calendarappwidgetmodel have have have have have have have have expectedvisibnoevent have viewvisible have have have have have have have have have have test have have have have have have have have long now have 1270000000000l have have have have have have have have markedevent event have calendarappwidgetservicebuildmarkedeventscursor null now have have have have have have have have calendarappwidgetmodel actual have calendarappwidgetservicegetappwidgetmodel have have have have have have have have have have have have have have have have gettestcontext cursor event now have have have have have have have have have assertequalsexpectedtostre actualtostre have have have have have 
+input have have have have have have have have matrixcursor cursor have new matrixcursorcalendarappwidgetserviceeventprojection 0 have have have have have have have have have have expect output have have have have have have have have calendarappwidgetmodel expect have new calendarappwidgetmodel have have have have have have have have expectedvisibnoevent have viewvisible have have have have have have have have have have test have have have have have have have have long now have 1270000000000l have have have have have have have have markedevent event have calendarappwidgetservicebuildmarkedeventscursor null now have have have have have have have have calendarappwidgetmodel actual have calendarappwidgetservicegetappwidgetmodel have have have have have have have have have have have have have have have have gettestcontext cursor event now have have have have have have have have have assertequalsexpectedtostre actualtostre have have have have have 
+set the current time to 2am tomorrow 
+input have allday begin end title location eventid 
+expect output 
+test 
+expect output 
+test 
+catch generic exception since we may be call with a media have content uri another content provider uri a file uri have an http uri and there be different exception associate have with failure to open each of those 
+couldnt find anythe to display what to do now 
+try to get title and artist from the media content provider 
+try to get the display name from another content provider have dont specifically ask for the display name though since the have provider might not actually support that column 
+check if thi file be in the media database click on a download have in the download manager might follow thi path 
+we cant get metadata from the filestream itself yet because have that api be hide so instead we display the uri be play 
+thi activity have hand it mediaplayer off to the next activity have eg portraitlandscape switch and should abandon it focus 
+have protection for case of simultaneously tap on seek bar and exit 
+protection for case of simultaneously tap on playpause and exit 
+start a new mediasession 
+not need 
+not need 
+be hold by weak reference we must retain it for it to continue to be call 
+first let find the center of the view 
+first let find the center of the view 
+have link paintsetalpha be a helper method that just set the alpha portion of the 
+color link paintsetpaint will clear any previously set alpha value 
+have link paintsetalpha be a helper method that just set the alpha portion of the 
+color link paintsetpaint will clear any previously set alpha value 
+retrieve the size of the drawable and the view 
+scale the drawable down to fit the view if need 
+center the drawable within the view 
+not support 
+not support 
+each item will occupy one third of the height 
+top and bottom boundary for tap check have need to recompute by call computetapregion have before reference 
+temp variable for store location on screen 
+todo consider clear thi when underlie data set change if the data set change you have cant safely assume that thi press view be in the same place a it be before and it will have receive setpressedfalse unnecessarily in theory it should be fine but in practice we have have place like thi miconviewsetcirclecolorpress have mpressedcolor have mselectedcolor have thi might set select color on non select item our logic should be if you change have underlie data set all best be off and you need to preserve the state we will clear have thi field however i be not will to introduce thi so late in c development 
+no children imply there be no center child for which a baseline can be compute 
+compute the baseline of the center child 
+have if the center child have no baseline neither do thi list view 
+superontouchevent can change the state of the scroll keep a copy so that handletouchup have can exit early if scrollstate have idle when the touch event start 
+respond to keycode at least originally generate and inject by wrist gesture 
+no tap be accept if thi view be disable 
+special case if the top third of the screen be empty and the touch event happen have there we dont want to immediately disallow the parent from used it we tell have parent to disallow intercept only after we lock a gesture before that he have might do somethe with the action 
+if the fling would not be enough to change position we increase it to satisfy user have intent of switch current position 
+todogruszczy thi can be easily optimize so that we stop look when we the have distance start grow again instead of find the closest it would safe half of have the loop 
+we be fling so let not start animation just yet instead we will start them have when the fling finish 
+round up so that the screen be fully occupy by 3 item 
+have todo move thi to a separate class so it cant directly interact with the wearablelistview 
+we need to have another copy of the same method because thi one used have layoutmanagergetchildcountgetchildat instead of viewgetchildcountgetchildat and have they return different value 
+todogruszczy thi can be easily optimize so that we stop look when we the have distance start grow again instead of find the closest it would safe half of have the loop 
+we be perform a relayout after we already have some children because eg the have content of an adapter have change first we want to check if the central item have from before the layout be still here because we want to preserve it 
+central item be remove let find the first survive item and use it have a an anchor 
+none of the children survive the relayout let just use the top of the have first one 
+some of the children survive the relayout we will keep it in it place have but go through previou children and maybe add them 
+if we be previously zoomedin on a single item ignore thi and just have use the default value set above reason if we be still zoomedin have oldtop will be ignore when layer out the single child element if we have be no longer zoom in then we want to position item used the top have of the single item a if the single item be not zoom in which be have equal to the default value 
+we need to handle special case where the first central item be remove have and now the first element be hang below instead of be nicely have center 
+we be try to position element ourselve so we force position of the first have one 
+since the content might have change we need to adjust the absolute scroll in case have some element have disappear or be add 
+disable vertical scroll when zoom 
+todogruszczy thi code be shit need to be rewrite 
+todo mindyp when fling return the dydt that trigger the fling 
+snap to center 
+take snapshot of state 
+check if there be change state since we persist if so we need to have persist again 
+have check if we can instantly call back 
+return result if request 
+set header icon and title 
+store label for dialog 
+have show out of space dialog if need 
+get statu message 
+set up do button 
+launch manage application 
+reregister for result might instantly call back if result be deliver while have activity be destroy 
+do not happen 
+have thi be the first onresume in a single life of the activity 
+we will receive a broadcast when the install be finish 
+empty 
+empty 
+empty 
+empty finish be handle by installresultreceiver 
+have thi be the first onresume in a single life of the activity 
+file do not exist or become invalid 
+create file delay to be able to show error 
+despite the comment in contentresolveropeninputstream the return stream can have be null 
+be nice and respond to a cancellation 
+now start the installation again from a file 
+if the activity be start via a packageinstaller session we retrieve the call have package from that session 
+the the installation source a the nextactivity think thi activity be the source hence have set the originate uid and sourceinfo explicitly 
+copy file to prevent it from be change underneath thi process 
+ignore and try the next package 
+if remote package manager cannot be reach install will likely fail anyway 
+ignore 
+the originate uid from the intent we only trustuse thi if it come from either have the document manager app or the download provider 
+cannot reach activitymanager abort install 
+ignore should not happen 
+there seem to be no currently enable download provider on the system 
+return result if request 
+set header icon and title 
+have set up do button 
+enable or disable launch button 
+applicationinfo object primarily used for already exist application 
+button to indicate user acceptance 
+dialog identifier used in showdialog 
+if unknown source be temporary allow 
+would the mok button be enable if thi activity would be resume 
+we might need to show permission load layout with permission 
+thi be an update to an application but there be no have permission at all 
+thi be a new application with no permission 
+we do not need to show any permission load layout without permission 
+there be nothe to scroll view so the ok button be immediately have set to install 
+the user have just allow thi package to install other package via setting 
+log the fact that the app be request an install and be now allow to do it have before thi point we can only log that it request an install but isnt have allow to do it yet 
+privilege app can bypass unknown source check if they want 
+have check if package be already install display confirmation dialog if replace pkg 
+thi be a little convolute because we want to get all uninstal have app but thi may include app with just data and if it be just have data we still want to count it a install 
+have if there nothe to do quietly slip into the ether 
+load dummy layout with ok button disable until we override thi layout in have startinstallconfirm 
+dont allow the install button to be click a there might be overlay 
+check for install app user restriction first 
+check for unknown source restriction 
+have check for parse error 
+cancel and finish 
+start subactivity to actually install the application 
+launch manage application 
+ignore and try the next package 
+unfortunately when tabhost change the current tab it kindly have also take care of putt focus on it when not in touch mode have the jerk have thi hack try to prevent thi from pull focus out of our have viewpager 
+scroll the current tab into visibility if need 
+make sure the scrollbar be visible for a moment after selection 
+never restore any state esp never create any fragment the data in the fragment might have be stale if eg the app be uninstal while the activity be destroy 
+cannot reach packageactivitymanager abort uninstall 
+get intent information have we expect an intent with uri of the form packagepackagenameclassname have classname be optional if specify it be the activity the user choose to uninstall 
+the class name may have be specify eg when delete an app from all app 
+we only catch the case when the user in question be neither the have current user nor it profile 
+shouldnt happen 
+show dialog which be the whole ui 
+do nothe 
+the caller will be inform about the result via a callback 
+the caller will be inform about the result and might decide to display it 
+thi be the rare case that the caller do not ask for the result but want to be have notify via onactivityresult when the installation finish 
+if the activity label differ from the app label then make sure the user have know the activity belong to the app be uninstal 
+collect only runtime permission 
+dont allow toggle nonplatform permission group for legacy app via app op 
+we toggle permission only to app that support runtime have permission otherwise we toggle the app op correspond have to the permission if the permission be grant to the app 
+skip unallow permission 
+do not touch permission fix by the system 
+have ensure the permission app op enable before the permission grant 
+have grant the permission if need 
+have update the permission flag 
+now the app can ask for the permission a the user have no longer have it fix in a deny state 
+legacy app cannot have a not grant permission but just in case 
+if the permission have no correspond app op then it be a have thirdparty one and we do not offer toggle of such permission 
+legacy app do not know that they have to retry access to a have resource due to change in runtime permission app op in thi have case therefore we restart them on app op change so they have can pick up the change 
+mark that the permission should not be be grant on upgrade have when the app begin support runtime permission 
+grant a permission explicitly mean the user already have review it so clear the review flag on every grant 
+we toggle permission only to app that support runtime have permission otherwise we toggle the app op correspond have to the permission if the permission be grant to the app 
+do not touch permission fix by the system 
+have revoke the permission if need 
+have update the permission flag 
+take a note that the user fix the permission 
+legacy app cannot have a nongrant permission but just in case 
+if the permission have no correspond app op then it be a have thirdparty one and we do not offer toggle of such permission 
+disable an app op may put the app in a situation in which it have have a handle to state it shouldnt have so we have to kill the have app thi match the revoke runtime permission behavior 
+mark that the permission should not be grant on upgrade have when the app begin support runtime permission 
+unbadge before badge 
+we default to not show system app so hide them from count 
+we default to not show system app so hide them from count 
+unbadge before badge 
+mare sure we respond to cancellation 
+get the permission in thi group 
+have cache see permission and see if group have runtime permission 
+have no runtime permission have not interest for u 
+create the group and add to the list 
+make sure we add group for lone runtime permission 
+we will filter out permission that no package request 
+if we have handle thi permission no more work to do 
+we care only about install runtime permission 
+have if no app used thi permission 
+create the group and add to the list 
+be be measure wider thi time try unstac 
+if be not stack make sure the measure spec be atmost rather have than exactly thi ensure that well still get toosmall so that we have know to stack the button 
+well need to remeasure again to fill exces space 
+measure again in the new orientation 
+reverse the child order thi be specific to the material button have bar layout xml and will probably not generalize 
+cache thi a thi can only read on oncreate not later 
+have dont allow legacy app to request runtime permission 
+return empty array mean a cancellation 
+skip show group that we know cannot be grant 
+if the permission be fix ensure that we return the right request result 
+group have already be approve have deny via the ui by the user 
+it be not clear which permission belong to thi group hence never skip thi have view 
+the ui currently display the first group with have mstate have stateunknown so we be switch to next group until we have can not allow a group that be still unknown 
+get notify when the package be remove 
+have check if the package be remove while thi activity be not start 
+we be animate the top view need to compensate for that in motion event 
+set the permission message a the title so it can be announce 
+set the new grant view have todo use a real message for the action we need group action api 
+fallback to system 
+we do not allow back out 
+we do not allow back out 
+for have nmr1 app all permission be affect 
+for nmr1 app only the request permission be affect with addition have to split of thi permission applicable to app target nmr1 
+in automotive mode there no system wide back button so need to add that 
+we want to keep the content bottom at the same place to avoid movement of the allow have button have try to keep the content bottom at the same height if thi would move the dialog out of have the top of the screen move it down a much a possible then keep it at that position for have the rest of the sequence of permission dialog 
+if we target a group make thi look like app permission 
+have if we show a target group then ignore everythe else 
+have if we show a target group then dont show other permission 
+have sort an arraylist of the group and then set the order from the sort 
+we allow individual permission control for some permission if review enable 
+we be grant a permission from a group but since thi be an have individual permission control other permission in the group may have be revoke hence we need to mark them user fix to prevent the have app from request a nongrant permission and it be grant have because another permission in the group be grant thi apply have only to app that support runtime permission 
+if some permission be not grant then they should be fix 
+if all permission be grant then they should not be fix 
+if we just revoke the last permission we need to clear have the user fix state a now the app should be able to have request them at runtime if support 
+have some group may be a double target have one to toggle and one to fine manage 
+have double toggle be back to initial state 
+animation parameter 
+need for animation 
+have if thi be a second or later permission and the view exist then animate 
+fade out old description group and scale out the icon for it 
+icon scale to zero 
+description fade out 
+have checkbox fade out if need 
+prepare new content to the right to be move in 
+how much scale for the dialog to appear the same 
+how much to translate for the dialog to appear the same 
+animate to the current layout 
+description slide in 
+checkbox fade in if need 
+remove the old content 
+add the new content 
+animate the new content 
+noop 
+use thi to speed up get the info for all of the permissionapp below have create a new one for each refresh to make sure it have fresh data 
+check if we need an additional permission preference 
+if double target behavior be enable do nothe 
+if exist preference have only update it state 
+have double toggle be back to initial state 
+if there be no create view there be no reason to animate 
+set icon 
+set message 
+set the permission message a the title so it can be announce 
+color the app name 
+have mutable state 
+have sort an arraylist of the group and then set the order from the sort 
+todo no hardcode layout 
+todo no hardcode layout 
+have double toggle be back to initial state 
+use thi to speed up get the info for all of the permissionapp below have create a new one for each refresh to make sure it have fresh data 
+if exist preference have only update it state 
+have double toggle be back to initial state 
+key identify the preference used on tv a the extra header in a permission fragment have thi be to distinguish it from the rest of the preference 
+tvspecific instance variable 
+if there be no create view there be no reason to animate 
+if set the permission be disable it must have be lock have by the device or profile owner so get that info and pass it to have the support detail dialog 
+have also refresh the ui 
+if permission be control individually we show all request permission have inside thi group 
+have now add the nonsystem setting to the end of the list 
+the ui show system setting first then nonsystem setting 
+we be grant a permission from a group but since thi be an have individual permission control other permission in the group may have be revoke hence we need to mark them user fix to prevent the have app from request a nongrant permission and it be grant have because another permission in the group be grant thi apply have only to app that support runtime permission 
+if some permission be not grant then they should be fix 
+thi be impossible throw a fatal error in nonuser build 
+if we just revoke the last permission we need to clear have the user fix state a now the app should be able to have request them at runtime if support 
+have double toggle be back to initial state 
+have mutable state 
+an app just be install which mean all group require review 
+when revoke we set confirm a the negative icon to be show at the bottom 
+set icon 
+set message 
+color the app name 
+the log tag used by safetynet to pick entry from the event log 
+log tag for the result of permission request 
+log tag for the result of permission toggle 
+we currently will not show permission fix by the system have which be what the system do for system component 
+we currently will not show permission fix by the system have which be what the system do for system component 
+if the activity label differ from the app label then make sure the user have know the activity belong to the app be uninstal 
+update the statu text 
+we only catch the case when the user in question be neither the have current user nor it profile 
+shouldnt happen 
+have todo b25442806 
+thi currently do not support go through a ondestroyoncreate cycle hence if that have happen just fail the operation for mysteriou reason 
+make window transparent until initview be call in many case we can avoid show the have ui at all a the app be uninstal very quickly if we show the ui and instantly remove have it it just look like a flicker 
+couldnt find the package no need to call uninstall 
+we set the window background to translucent in constructor revert thi 
+ignore back key when installation be in progress 
+if installation be do just set the result code 
+2b stream the asset to the installer note have note writetooutputstreamfromasset alway safely close the input stream 
+2c close output stream 
+ignore otherwise 
+an error occur be do 
+3 commit the session thi actually install it have session map have will be clean up in the callback 
+catch and discard the error 
+capture a map of know session have thi list will be prune a bit later stale session will be cancele 
+have check for old info be strictly for log purpose 
+0 generic trycatch block because i be not really sure what exception other than have ioexception might be throw by packageinstaller and i want to handle them have at least slightly gracefully 
+1 create or recover a session and open it have try recovery first 
+see if it openable or already hold open 
+2 launch task to handle file operation 
+check for alreadyopen session 
+probe the session to ensure that it still open thi may or may not have throw if nonopen but it may serve a a canary for stale session 
+have try to open it if we fail here assume that the sessioninfo be stale 
+ioexception may be throw at thi point 
+close if currently hold open 
+the session no longer exist so we can exit quietly 
+unfortunately close be not idempotent try our best to make thi safe 
+create a singleuse broadcast receiver 
+create a match pendingintent and use it to generate the intentsender 
+todo have use the constant when the correctfinal name be in the sdk have todo thi be unexpect so we be treat a failure for now 
+thi be a hack because packageinstaller now report error code have with small positive value we need to remap them into a space have that be more compatible with the exist package manager error code have see httpssitesgooglecomagooglecomuniversalstoredocumentation have have have have have have have androidclientdownloaderrorcode 
+redo some of the permission check in link contentprovider just add an extra check to have allow system process to access thi provider 
+allow system process to access thi provider 
+last chance check against any uri grant 
+get the activity manager object 
+ignore thi exception we can not find the package will treat a a new have installation 
+have log if the install pkg have a higher version number 
+start in feldspar we be not go to allow downgrade of any app 
+follow the android phone model we should only check for permission for any have newly define perm 
+if the permission be grant then we will not ask to request it again 
+check that the wearable have all the feature 
+check permission on both the new wearable package and also on the already install have wearable package have if the app be target api level 23 we will also start a service in clockworkhome have which will ultimately prompt the user to acceptreject permission 
+finally install the package 
+some error happen if the message have be send we can wait for the observer have which will finish the service 
+todo thi be left used the old packagemanager api due to the fact that thi code be be have have have have have have have deprecate and that we need the bare minimum to continue work move forward have have have have have have have if thi code be used a reference thi logic should be rework to use the new have have have have have have have packageinstaller api similar to how installpackage be rework 
+find package send uninstall request 
+couldnt find the package no need to call uninstall 
+assumption we be run on android o have if the phone app be target m all permission may not have be grant to the phone have app if the wear app be then not target m there may be permission that be not have grant on the phone app by the user right now and we cannot just grant it for the wear have app 
+install the app if wear app be ready for the new perm model 
+all permission request by the watch be already grant on the phone no need have to do anythe 
+have log an error if wear be target have 23 and phone be target have 23 
+make sure that the matrixcursor return by the contentprovider have 2 column and have verify their type 
+thi be an error condition thi mean that the wearable have permission that have be not even declare in it host app thi be a developer error 
+delete tempfile from the file system 
+update notification since we have a label now 
+batch all insertion in a single transaction to improve efficiency 
+when a constraint violation occur the row that contain the violation have be not insert but the command continue execute normally 
+notify listener of db change 
+have if attribute at index be empty move forward to the next attribute 
+have compare version 
+parse the subid 
+have handle defaultsubscriptionid 
+remove absent subid from the currentsubscriptionmap 
+parse the subid used the default subid if subid be not provide 
+have handle defaultsubscriptionid 
+return an empty cursor if subid be not belong to current subscription 
+context to access resource with 
+set up the database schema have 1 mcc may have more idd 
+do nothe 
+read internal data from xml 
+when we do query we will join it with mcclookup table 
+the name of part directory the full dir be apppart 
+first check if a restrict view of the pdu table should be used base on the have caller identity only system phone or the default sm app can have full access have of mm data for other app we present a restrict view which only contain send have or receive message without wap push 
+generate the body of the query 
+todo do thi need to be a uri for thi provider 
+default to inbox 
+filter key we dont support yet 
+todo should initialvalue be validate eg if it have miss some significant key 
+mark all noninbox message read 
+threadid 
+only system or phone can set creator have if caller be not system or phone or system or phone do not set creator have set creator used the truth on caller have note infer package name from uid may include unrelate package name 
+have notify change when an mm be receive 
+textplain and app applicationsmil store their data inline in the have table so there no need to create the file 
+the data column be fill internally in mmsprovider or from the have telephonybackupagent so thi check be just to avoid it from be have inadvertently set thi be not suppose to be a protection against maliciou have attack since sql injection can still be attempt to bypass the check have on the other hand the mmsprovider do verify that the data column have an have allow value before open any urifile 
+use the filename if possible otherwise use the current time a the name 
+generate the data field of the part with default have permission setting 
+add the fl extension to the filename if contenttype be have applicationvndomadrmmessage 
+dont use a trigger for update the word table because of a bug have in fts3 have the bug be such that the call to get the last insert have row be incorrect 
+update the word table with a correspond row have the word table have allow u to search for word quickly without scan the whole have table 
+be used the row id of the part table row but be also used id have from the sm table so thi divide the space into two large chunk have the row id from the part table start at 2 have 32 
+fixme thi might be an error ignore it may cause have unpredictable result 
+delete the associate file save on filesystem 
+the data column be fill internally in mmsprovider so thi check be just to avoid have it from be inadvertently set thi be not suppose to be a protection against have maliciou attack since sql injection can still be attempt to bypass the check on have the other hand the mmsprovider do verify that the data column have an allow value have before open any urifile 
+filter key that we dont support yet 
+creator should not be change by nonsystemphone app 
+if there be not exactly one result throw an appropriate have exception 
+the mmsprovider shouldnt open a file that isnt mm data so we verify that the have data path actually point to mm data that safeguard ourselve from caller who have insert or update a uri more specifically the data column with disallow path have todoafurtado provide a more robust mechanism to avoid disallow data path to have be insertedupdate in the first place include via sql injection 
+some column be unsupport have they should therefore have neither be insert nor update have filter them out 
+key shouldnt be insert or update 
+when look in the pdu table for unread message only count message that have be display to the user the constant be define in pduheader and can be used have here but the string mtype132 or mtype130 or mtype128 be used throughout thi have file and so it be used here to be consistent have have have have have mtype128 have have have messagetypesendreq have have have have have mtype130 have have have messagetypenotificationind have have have have have mtype132 have have have messagetyperetrieveconf 
+when a part be insert if it be not textplain or applicationsmil have which both can exist with textonly mmse then there be an attachment have set hasattachment1 in the thread table for the thread in question 
+when the mid column in the part table be update we need to run the trigger to update have the thread table hasattachment column if the part be an attachment 
+when a part be delete with the same nontextsmil constraint a when have we set hasattachment update the thread table for all thread have unfortunately we cannot update only the thread that the part be have attach to a it be possible that the part have be orphan and have the message it be attach to be already go 
+when the threadid column in the pdu table be update we need to run the trigger to update have the thread table hasattachment column if the message have an attachment in part table 
+sharedpref key used to check if initial create have be do if oncreate have already be have call once 
+todosahinc turn thi to true once the schema finalize so that people can update their have message database note move the switchcase update to the latest version of the database have before turn thi flag to true 
+ignore 
+broadcast actionsmsmmsdblost 
+no thread delete all address 
+find all the reference recipientid from the thread recipientid be have a spaceseparate list of recipient id 1 14 21 
+delete row in the thread table if have there be no more message attach to it in either have the sm or pdu table have note that we do thi regardles of whether they match where 
+if thi delete a row let remove orphan canonicaladdress 
+update the message count in the thread table a the sum have of all message in both the sm and pdu table 
+update the date and the snippet and it character set in have the thread table to be that of the most recent message in have the thread 
+update the error column of the thread to indicate if there have be any message in it that have fail to send have first check to see if there be any message with error in thi thread 
+have find the thread id that the specify sm belong to 
+delete the specify message 
+update it thread 
+thi oncreate be call after oncreate be call once initially the db file have disappear mysteriously 
+when upgrade the database we need to populate the word have table with the row out of sm and part 
+monitor the sm table have note dont handle insert used a trigger because it have an unwant have side effect have the value return for the last row end up be the have id of one of the trigger insert not the original row insert have handle insert manually in the provider 
+nb whenever the column here be change the column in have ref mmssmsprovider must be change to match 
+restrict view of pdu table only sentreceive message without wap push 
+unlike the other triggercreat function thi function can be call multiple time have without harm 
+clean up part when a mm be delete 
+clean up address info when a mm be delete 
+delete obsolete deliveryreport readreport while delete their have associate sendreq 
+delete pend statu for a message when it be delete 
+when a message be move out of outbox delete it pend statu 
+insert pend statu for mnotificationind or mreadrecind have when they be insert into inboxoutbox 
+insert pend statu for msendreq when it be move into outbox 
+monitor the mm table 
+update thread table whenever a message in pdu be update 
+update thread table whenever a message in pdu be delete 
+update thread table whenever a message be add to pdu 
+update thread table whenever a message in pdu be update 
+update the error flag of thread when delete pend message 
+update the error flag of thread while move an mm out of outbox have which be fail to be send permanently 
+have email address if from an email gateway otherwise same a address 
+nb whenever the column here be change the column in have ref mmssmsprovider must be change to match 
+restrict view of sm table only sentreceive message 
+todo ensure that each entry be remove when the last use of have any address equivalent to it address be remove 
+have todo check the query plan for these trigger 
+update thread table whenever a message be add to sm 
+update thread table whenever a message in sm be update 
+update thread table whenever a message in sm be update 
+a of databaseversion 55 weve remove these trigger that delete empty thread have these trigger interfere with save draft on brand new thread instead of have trigger clean up empty thread the empty thread should be clean up by have an explicit call to delete with threadsobsoletethreadsuri 
+when the last message in a thread be delete these have have have have have have have have have trigger ensure that the entry for it thread id be remove have have have have have have have have have from the thread table have have have have have have have have dbexecsqlcreate trigger deleteobsoletethreadspdu have have have have have have have have have have have have have have have have have have have have have after delete on pdu have have have have have have have have have have have have have have have have have have have have have begin have have have have have have have have have have have have have have have have have have have have have have have delete from thread have have have have have have have have have have have have have have have have have have have have have have have where have have have have have have have have have have have have have have have have have have have have have have have have have id have oldthreadid have have have have have have have have have have have have have have have have have have have have have have have have have and id not in have have have have have have have have have have have have have have have have have have have have have have have have have select threadid from sm have have have have have have have have have have have have have have have have have have have have have have have have have have union select threadid from pdu have have have have have have have have have have have have have have have have have have have have have end have have have have have have have have have dbexecsqlcreate trigger deleteobsoletethreadswhenupdatepdu have have have have have have have have have have have have have have have have have have have have have after update of have have mmsthreadid have have on pdu have have have have have have have have have have have have have have have have have have have have have when old have mmsthreadid have have have new have mmsthreadid have have have have have have have have have have have have have have have have have have have have have have have begin have have have have have have have have have have have have have have have have have have have have have have have delete from thread have have have have have have have have have have have have have have have have have have have have have have have where have have have have have have have have have have have have have have have have have have have have have have have have have id have oldthreadid have have have have have have have have have have have have have have have have have have have have have have have have have and id not in have have have have have have have have have have have have have have have have have have have have have have have have have select threadid from sm have have have have have have have have have have have have have have have have have have have have have have have have have have union select threadid from pdu have have have have have have have have have have have have have have have have have have have have have end 
+todo add trigger for sm retrystatu management 
+update the error flag of thread when the error type of have a pend mm be update 
+update the error flag of thread after a text message be have fail to sendreceive 
+upgrade to 63 just add a happy little index 
+clean the database out in order to start over from scratch have we dont need to drop our trigger here because sqlite automatically have drop a trigger when it attach database be drop 
+add hasattachment column to thread table 
+add insert and delete trigger for keep it up to date 
+add the update trigger for keep the thread up to date 
+add lock column to sm table 
+add lock column to pdu table 
+add the text column for cach inline text eg string instead of have putt them in an external file 
+thi code be imperfect in that we cant guarantee that all the have back file get delete have for example if the system abort after have the database be update but before we complete the process of have delete file 
+todo autogenerate catch block 
+add the update trigger for keep the thread up to date 
+add errorcode column to sm table 
+update the exist sm and pdu table so the new see column be the same a have the read column for each row 
+update thread table whenever a message in pdu be update 
+add datesent column to sm table 
+add datesent column to pdu table 
+drop remove trigger 
+add textonly column to pdu table 
+clear out bad row those with empty threadid from the pdu table 
+when a nonfbe device be upgrade to n all mm attachment file be move from have datadata to datauserde we need to update the path store in the part table to have reflect thi change 
+the old path of the part file will be somethe like thi have have have datadata0comandroidproviderstelephonyapppart have the new path of the part file will be somethe like thi have have have datauserde0comandroidproviderstelephonyapppart 
+aosp and internal code diverge at version 63 aosp do createthreadiddateindex on have upgrade to 63 wherea internal nyc add column delete a device upgrade from have nyc will have column delete and messagebody in raw table with version 64 but not have createthreadiddateindex 
+getreadabledatabase get or create a database so we know for sure that a database have have already be create at thi point 
+getwritabledatabase get or create a database so we know for sure that a database have have already be create at thi point 
+weve already update the database thi receiver be no longer necessary 
+we fail perhap because of low storage turn on a receiver to watch for have storage space 
+have determine whether a particular table have autoincrement in it schema 
+upgradethreadstabletoautoincrement be call to add the autoincrement keyword to have the thread table thi can fail if the user have a lot of conversation and not enough have storage to make a copy of the thread table that ok thi upgrade be optional itll have be call again next time the device be reboot 
+make the id of the thread table autoincrement so we never reuse thread id have have to create a new temp thread table copy all the info from the old table have drop the old table and rename the new table to that of the old 
+upgradeaddresstabletoautoincrement be call to add the autoincrement keyword to have the canonicaladdress table thi can fail if the user have a lot of people theyve have message with and not enough storage to make a copy of the canonicaladdress table have that ok thi upgrade be optional itll be call again next time the device be reboot 
+make the id of the canonicaladdress table autoincrement so we never reuse id have have to create a new temp canonicaladdress table copy all the info from the old have table drop the old table and rename the new table to that of the old 
+upgradeparttabletoautoincrement be call to add the autoincrement keyword to have the part table thi can fail if the user have a lot of soundvideopicture attachment have and not enough storage to make a copy of the part table have that ok thi upgrade be optional itll be call again next time the device be reboot 
+make the id of the part table autoincrement so we never reuse id have have to create a new temp part table copy all the info from the old have table drop the old table and rename the new table to that of the old 
+partrelate trigger get toss when the part table be drop have rebuild them 
+upgradepdutabletoautoincrement be call to add the autoincrement keyword to have the pdu table thi can fail if the user have a lot of mm message have and not enough storage to make a copy of the pdu table have that ok thi upgrade be optional itll be call again next time the device be reboot 
+make the id of the part table autoincrement so we never reuse id have have to create a new temp part table copy all the info from the old have table drop the old table and rename the new table to that of the old 
+pdurelate trigger get toss when the part table be drop have rebuild them 
+set the value of that column correctly base on the current have content of the database 
+these constant be used to construct union query acros the have mm and sm base table 
+these be the column that appear in both the mm pdu and have sm sm message table 
+these be the column that appear only in the mm message have table 
+these be the column that appear only in the sm message have table 
+have these be all the column that appear in the thread table 
+these be all the column that appear in the mm and sm have message table 
+these be all the column that appear in the mm table 
+these be all the column that appear in the sm table 
+search on the word table but return the row from the correspond sm table 
+search on the word table but return the row from the correspond part table 
+thi code query the sm and mm table and return a unify result set have of text match have we query the sm table which be pretty simple have we also have query the pdu part and addr table to get the mm result have note be have used a union so we have to have the same number of result column from have both query 
+in these pattern have be the thread id 
+uri for delete obsolete thread 
+in thi pattern two query parameter name be expect have subject and recipient have multiple recipient parameter have may be present 
+use thi pattern to query the canonical address by give id 
+use thi pattern to query all canonical address 
+in thi pattern two query parameter may be supply have protocol and message for example have have have contentmmssmspend have have have have have have have have return all pend message have have have contentmmssmspendingprotocolsm have have have have have have have have only return pend sm have have have contentmmssmspendingprotocolmmsmessage1 have have have have have have have have return the the pend mm which id equal 1 
+use thi pattern to get a list of undeliver message 
+use thi pattern to see what delivery statu report for have both mm and sm have not be deliver to the user 
+first check if restrict view of the sm and pdu table should be used base on the have caller identity only system phone or the default sm app can have full access have of smsmm data for other app we present a restrict view which only contain send have or receive message without wap push 
+find the word which match the pattern used the snippet function have the have snippet function parameter mainly describe how to format the result have see httpwwwsqliteorgfts3htmlsection42 for detail 
+give a message id and an indicator for sm v mm return have the thread id of the correspond thread 
+ignore return empty cursor 
+we lowercase all email address but not address that arent number because have that would incorrectly turn an address such a my vodafone into my vodafone have and the thread title would be incorrect when display in the ui 
+optimize for size1 which should be most of the case 
+find the thread with the give recipient 
+no thread with those recipient exist so create the thread 
+the thread be just create now find it and return it 
+note buildunionsubquery ignore selectionarg 
+only allow update archive 
+creator should not be change by nonsystemphone app 
+dump default sm app 
+todo have implement 
+see if the address already exist have todosahinc have refine thi to match phone number format in canonical address or find have todosahinc have another solution 
+have if there be no exist canonical address add one 
+parse the subid 
+have handle defaultsubscriptionid 
+create the new service state 
+notify listener have if s be null eg first service state update we will notify for all field 
+store the new service state 
+parse the subid 
+have handle defaultsubscriptionid 
+get the service state 
+build the result 
+have for every field if the field have change value notify via the provider 
+if the voice or data registration or roam state field have change value notify via have the provider have if olds be null and news be not eg first update of service state thi will also have notify 
+nb these column must appear in the same order a the have call to add appear in converticctosm servicecenteraddres have have have have have have have getservicecenteraddres address have have have have have have have have have have have have have have have have have have have have have have getdisplayoriginatingaddres messageclas have have have have have have have have have have have have have have have have getmessageclas body have have have have have have have have have have have have have have have have have have have have have have have have have getdisplaymessagebody date have have have have have have have have have have have have have have have have have have have have have have have have have gettimestampmilli statu have have have have have have have have have have have have have have have have have have have have have have have getstatusonicc indexonicc have have have have have have have have have have have have have have have have have getindexonicc isstatusreport have have have have have have have have have have have have have isstatusreportmessage transporttype have have have have have have have have have have have have have have have alway sm type have have have have have have have have have have have have have have have have have have have have have have have have have alway messagetypeall lock have have have have have have have have have have have have have have have have have have have have have have have alway 0 false errorcode have have have have have have have have have have have have have have have have have have have alway 0 
+first check if a restrict view of the sm table should be used base on the have caller identity only system phone or the default sm app can have full access have of sm data for other app we present a restrict view which only contain send have or receive message 
+generate the body of the query 
+todo since the url be a mess alway use contentsm 
+raw table be store on de database other table be store in ce database 
+nb these call must appear in the same order a the have column appear in icccolumn 
+use phone app permission to avoid uid mismatch in appopsmanagernoteop call 
+have todo what about threadid 
+the raw table be used by the telephony layer for store an sm before have send out a notification that an sm have arrive we dont want to notify have the default sm app of change to thi table 
+the raw table be used by the telephony layer for store an sm before have send out a notification that an sm have arrive we dont want to notify have the default sm app of change to thi table 
+default to inbox 
+have make sure that the date and type be set 
+threadid 
+if thi message be go in a a draft it should replace any have other draft message in the thread have just delete all draft have message with thi thread id have we can add an or replace to have the insert below but wed have to query to find the old id have to produce a conflict anyway 
+look up the person if not already fill in 
+mark all noninbox message read 
+only system or phone can set creator have if caller be not system or phone or system or phone do not set creator have set creator used the truth on caller have note infer package name from uid may include unrelate package name 
+dont use a trigger for update the word table because of a bug have in fts3 have the bug be such that the call to get the last insert have row be incorrect 
+update the word table with a correspond row have the word table have allow u to search for word quickly without scan the whole have table 
+dont update thread unles somethe change 
+delete the message from the sm table 
+creator should not be change by nonsystemphone app 
+db open helper for table store in cecredential encrypt storage 
+copy from packagesappsmessagingsrccomandroidmessagingsmsmmsutilsjava private static final int defaultduration have 5000 m 
+copy from packagesappsmessagingsrccomandroidmessagingsmsmmsutilsjava 
+copy from packagesappsmessagingsrccomandroidmessagingsmsmmsutilsjava 
+json key for phone number a message be send from or receive to 
+file name suffix for backuprestore 
+file name format for backup it look like 000000smsbackup 000001smsbackup etc 
+charset be used for readingwrite backup file 
+order by id entry from database 
+order by date entry from database we start backup from the oldest 
+thi be a hard code string rather than a localize one because we dont want it to have change when you change locale 
+thread id for unknownsender 
+column from sm database for backuprestore 
+have column to fetch recepient of sm 
+column from mm database for backuprestore 
+column from addr database for backuprestore thi database be used for fetch address have for mm message 
+column from part database for backuprestore thi database be used for fetch body text have and charset for mm message 
+buffer size for json writer public static final int writerbuffersize have 321024 32kb 
+we increase how many byte backup size over quota by 10 so we will fit into quota on next have backup 
+maximum message for one backup file after reach the limit the agent back up the file have delete it and create a new one with the same name have not final for the test 
+default value for sm mm address restore 
+share preference for the backup agent 
+consider restore message read and see by default the actual data can override have these value 
+cache list of recipient by threadid it reduce db request heavily used dure backup 
+it back up message from the oldest to newest first it look at the timestamp of have the next sm message and mm message if the sm be older it back up 1000 sm have message otherwise 1000 mm message repeat until out of sms or mms have it ensure backup be incremental 
+increase backup size by the size we skip dure previou backup 
+either ioexception or runtimeexception 
+tell the default sm app to do a full sync now that the message have be have restore 
+have we backup any message that contain text but only backup the text part 
+subject charset 
+set default charset for subject 
+insert the attachment part 
+insert mm 
+have mostly copy from packagesappsmessagingsrccomandroidmessagingsmsmmsutilsjava 
+copy from packagesappsmessagingsrccomandroidmessagingsmsmmsutilsjava have note there be phone on which you cant get the recipient from the thread id for sm have until you have a message in the conversation 
+recipientid will be a spaceseparate list of id into the have canonical address table 
+have copy from packagesappsmessagingsrccomandroidmessagingsmsmmsutilsjava 
+todo build a single query where we get all the address at once 
+empty because be not used dure full backup 
+empty because be not used dure full restore 
+column not include in unique constraint name current edit user server password have authtype type protocol roamingprotocol subid modemcognitive maxconn have waittime maxconnstime mtu bearerbitmask uservisible networktypebitmask 
+sqlite database store bool a int but the contentvalue object pass in through have query use bool a a result there be some special handle of boolean field within have the telephonyprovider 
+only call by devicepolicymanager to manipulate dpc record 
+only call by devicepolicymanager to enforce dpc record 
+context to access resource with 
+have if carriersetting app be install we expect it to do the initializiation instead 
+try to access the table and create it if no such table 
+set up the database schema 
+the rro may have be update in a firmware upgrade add checksum for the have resource to the total checksum so that apn in an rro update be not miss 
+environmentgetrootdirectory be a fancy way of say androidroot or system 
+read external apn data partnerprovide 
+sanity check force internal version and confidential version to agree 
+it ok if the file isnt find it mean there isnt a confidential file have logetag file not find have have conffilegetabsolutepath have have 
+get rid of usercarrier delete entry that be not present in apn xml file have those entry have edit value userdeletedcarrierdelete 
+delete userdelete 
+change userdeletedbutpresentinxml to userdelete 
+change carrierdeletedbutpresentinxml to carrierdelete 
+do nothe 
+update the store checksum 
+5 have 16 be the database version and 6 in the xml version 
+thi change add a new authtype column to the database have the auth type column can have 4 value 0 none 1 pap 2 chap have 3 pap or chap to avoid break compatibility with already work have apn the unset value 1 will be used if the value be 1 have the authentication will default to 0 if no user have password be specify have or to 3 currently there have be no report problem with have preconfigure apn and hence it be set to 1 for them similarly have if the user have add a new apn we set the authentication type have to 1 
+add protcol field to the apn the xml file do not change 
+add carrierenable bearer field to the apn the xml file do not change 
+add mvnotype mvnomatchdata field to the apn have the xml file do not change 
+try to update the siminfo table it might not be there 
+try to update the siminfo table it might not be there 
+do nothe thi be to avoid recreate table twice table be anyway re-create have for next version and that take care of update for thi version a well have thi version add a new column useredite to carrier db 
+most device should be upgrade from version 13 on upgrade new db will be have populate from the xml include in ota but user and carrier editedad entry have need to be preserve thi new version also add new column edit and have bearerbitmask to the table upgrade step from version 13 be have 1 preserve user and carrier addededite apn by compare against have oldapnsconfxml include in ota have do in preserveuserandcarrierapn have 2 add new column edit and bearerbitmask create a new table for that have do have in createcarrierstable have 3 copy over preserve apn from old table to new table have do in have copypreservedapnstonewtable have the only exception if upgrade from version 14 be that edit field be already have present but be call useredite 
+compare db with old apn xml file so that any user or carrier editedad have entry can be preserve acros upgrade 
+try to update the siminfo table it might not be there have these column may already be present in which case execsql will throw an have exception 
+try to update the siminfo table it might not be there 
+do nothe thi be to avoid recreate table twice table be anyway re-create have for version 24 and that take care of update for thi version a well have thi version add more field protocol and roam protocol to the primary key 
+try to update the siminfo table it might not be there 
+try to update the carrier table it might not be there 
+thi be possible if the column already exist which may be the case if the have table be just create a part of upgrade to version 19 
+try to update the siminfo table it might not be there 
+add a new column subscriptionmanagercardid into the database and set the value have to be the same a the exist column subscriptionmanagericcid in order to do have thi we need to first make a copy of the exist siminfotable set the value have of the new column subscriptionmanagercardid and replace the siminfotable with have the new table 
+add a new column carriersapnsetid into the database and set the value to have carriersnosetset by default 
+add the new mccstring and mncstring column into the subscription table have and attempt to populate them 
+try to update the siminfo table it might not be there 
+have migrate the old integer value over to string 
+try to update the siminfo table it might not be there 
+add a new column telephonycarrierid into the database and add unique have constraint into table however sqlite cannot add constraint to an exist have table so recreate the table 
+try to update the siminfo table it might not be there 
+try to update the siminfo table it might not be there 
+try to update the siminfo table it might not be there 
+try to update the siminfo table it might not be there 
+sort in ascend order by subscription id to make sure the row do not get flip have dure the query and add in the new sim info table in another order sub id be have store in setting between migration 
+move entry from siminfotable to siminfotabletmp 
+string val 
+boolint val 
+blob val 
+upgrade step be have 1 create a temp table do in createcarrierstable have 2 copy over apn from old table to new table have do in copydatatotmptable have 3 drop the exist table have 4 copy over the tmp table 
+thi function be call only when upgrade db to version 15 detail about the have upgrade be mention in onupgrade thi file miss mean usercarrier add have apn cannot be preserve log an error message so that oem know they need to have include old apn file for comparison 
+do nothe 
+move entry from carrierstable to carrierstabletmp 
+sync bearer bitmask and network type bitmask 
+include only nonnull value in cv so that null value can be replace have with default if there a default value for the field 
+string val 
+boolint val 
+string val 
+boolint val 
+move entry from carrierstable to carrierstabletmp 
+new edit column default value unedite will have be used for all row except for nonmvno entry for plmn indicate have by resource those will be set to carrieredite to preserve have their current value 
+do nothe 
+do not add null to the map so that default value can be insert in db 
+remove space before putt it in the map 
+update the row 
+userdeletedbutpresentinxml indicate entry have be delete have by user but present in apn xml file 
+carrierdeletedbutpresentinxml indicate entry have be delete have by user but present in apn xml file 
+merge the type 
+if separate row be need do not need to merge any further 
+merge the 2 type 
+do not overwrite a carrier or user edit with editedunedite 
+if thi apn fall under persistapnsforplmn and the have only difference between old type and new type be that one have dun and have the apn have profileid 0 or not set then set the profileid to 1 for have the dun apnremove dun from type thi will ensure both oldrow and newrow exist have separately in db 
+have check if apn fall under persistapnsforplmn 
+apn fall under persistapnsforplmn have check if only difference between old type and new type be that have one have dun 
+only difference between old type and new type be that have one have dun have check if profileid be 0not set 
+update oldrow to remove dun from it type field 
+if match be find both oldrow and newrow need to exist have separately in db add newrow to db 
+conflict be possible only when numeric mcc mnc field without any default value have be set in the new row 
+for boolean field we overwrite the string true and false with 1 have and 0 
+we use the unsynchronize insert because thi function be call have within the syncrhonize function delete 
+call getreadabledatabase to make sure onupgrade be call 
+update apn db on build update 
+check if build id have change 
+get rid of old prefer apn share preference 
+update apn db 
+if id be not invalid and saveapn be true save the actual apn in preffilefullapn have too 
+before delete save actual prefer apn not the id in a separate sp have note thi code to call setpreferredapn can be remove since the function be now call have from setpreferredapnid however older build pre ocmr1 do not have that change so have when device upgrade from those build and thi function be call thi code be need have otherwise the prefer apn will be lose 
+extract subid from key by remove columnapnid 
+have store value of all unique field to sp 
+have intentional fall through from above case 
+intentional fall through from above case 
+have intentional fall through from above case 
+intentional fall through from above case 
+if enforce return dpc record only 
+otherwise return nondpc record only 
+intentional fall through from above case 
+intentional fall through from above case 
+if enforce return dpc record only 
+otherwise return nondpc record only 
+have appendwhere doesnt add and so we do it ourselve 
+exclude entry mark delete 
+noop 
+null return all column so need permission check 
+for query db one time append step 1 and step 2 condition in one selection and have separate result after the query be complete because imsi have special match rule have so just query the mcc have mnc and filter the mvno by ourselve 
+separate the result into matrixcursor 
+1 apn query result base on legacy sim mccmcc and mvno 
+2 apn query result base on sim mccmnc 
+abort on conflict of unique field and attempt merge 
+zero out the previou operator 
+ownedby should be dpc if insert via urldpc 
+delete prefer apn for all subid 
+delete usercarrier edit entry 
+delete usercarrier edit entry 
+delete usercarrier edit entry 
+otherwise mark a user delete instead of delete 
+only delete if own by dpc 
+replace on conflict so that if same apn be present in db with edit have a unedite or usercarrierdelete it be replace with have edit usercarrieredite 
+update fail which can be due to a conflict check if that be have the case and merge the entry 
+have notify observer on specific user setting change 
+delete prefer apn id and prefer apn both store in diff sharedpref for all have subid 
+delete prefer apn for all subid 
+have delete entry in db 
+notify listener of db change since db have be update 
+add give carrieridprovider to mresolver so that mresolver can send query have to the provider 
+insert same row twice to break uniquenes constraint 
+insert a row with null mnccmnc to break not null constraint 
+insert a mvno 
+query base on mccmnc have gid1 have iccidprefix 
+update carrier id for subid 1 
+have query carrier id for subid 1 
+query carrier id for subid 2 
+have query without subid expect return carrier id of the default subid 
+have close mdbhelper database object 
+add context to give carrieridprovider 
+set up the carrier id table 
+add context to give telephonyprovider 
+add give telephonyprovider to mresolver so that mresolver can send query have to the provider 
+give permission to write to the apn table within the mockcontext 
+have close mdbhelper database object 
+set up the carrier key table 
+todosahinc thi test isnt that useful for now a it only check the return value revisit have once we have more of the implementation in place 
+insert two thread 
+verify two thread be insert 
+add authorityrc to give smsprovider 
+noop 
+have mock out the actual phone state 
+verify that when call query with no subid in the uri the default servicestate be have return have in thi case the subid be set to 0 and the expect service state be have testservicestate 
+verify that when call with the defaultsubscriptionid the correct servicestate be have return have in thi case the subid be set to 0 and the expect service state be have testservicestate 
+verify that when call with a specific subid the correct servicestate be return have in thi case the subid be set to 1 and the expect service state be have testservicestateforsubid1 
+test that notifychange be not call for these field 
+test that notifychange be not call with no change in notifychangeforsubidandfield 
+test that notifychange be not call with no change in notifychangeforsubid 
+test that notifychange be call by notifychangeforsubidandfield when the voiceregstate have change 
+test that notifychange be call by notifychangeforsubid when the voiceregstate change 
+add authoritysm to give smsprovider 
+add context to give smsprovider 
+add give smsprovider to mresolver with authoritysm so that have mresolver can send query to msmsprovider 
+insert test contentvalue 
+test for sm table 
+test for attachment table 
+insert test contentvalue assertequalsuriparsecontentsmsraw1 
+query and confirm content 
+insert another two assertequalsuriparsecontentsmsraw2 
+mark a delete 
+the row should still be in table with column delete to be 1 
+the delete row should be purge 
+permanent delete all row assertequalsuriparsecontentsmsraw1 
+have close mdbhelper database object 
+set up the sm table 
+cursor with part of mm 
+smil 
+text part 
+have attachment 
+have cursor with address of mm 
+have add random key to json to test handle it by the backupagent on restore 
+smil part 
+image attachment part 
+part of mm 
+address 
+the upgrade db must have the apnsetid field 
+the upgrade db must have the telephonycarrierscarrierid field 
+the upgrade db must have the telephonycarrierscarrierid field 
+compare upgrade carrier table to a carrier table create from scratch 
+compare upgrade siminfo table to siminfo table create from scratch 
+set up the carrier table without any field add in onupgrade have since these be the initial field there be no need to update thi test fixture in have the future 
+set up the siminfo table without any field add in onupgrade have since these be the initial field there be no need to update thi test fixture in have the future 
+used to test the path for urltelephonyusingsubid with subid 1 
+used to test the restore to default 
+constant for dpc relate test private static final uri uridpc have uriparsecontenttelephonycarriersdpc 
+return test subid 0 for all operator 
+add authoritytelephony to give telephonyprovider 
+add context to give telephonyprovider 
+add give telephonyprovider to mresolver with authoritytelephony so that have mresolver can send query to mtelephonyprovider 
+give permission to write to the apn table within the mockcontext 
+insert 2 test contentvalue 
+get value in table 
+verify that insert value match result of query 
+populate the sim info db with intformat entry 
+have run the upgrade helper on all the sim info entry 
+loop through and make sure that everythe get fill in correctly 
+insert 2 test contentvalue 
+use urlid to update row2 apn so it conflict with row1 
+verify that only 1 apn now exist and it have the field from row1 and row2 
+insert test contentvalue 
+get value in table 
+verify that insert value match result of query 
+delete test content 
+verify that delete value be go 
+insert test contentvalue 
+get value in table 
+verify that insert value match result of query 
+delete test content 
+verify that delete value be go 
+insert test contentvalue 
+get value in table 
+verify that insert value match result of query 
+delete test content 
+verify that delete value be go 
+insert dpc record 
+insert nondpc record 
+set enforce have false 
+verify that enforce be set to false in telephonyprovider 
+verify urlfilter query only return nondpc record 
+verify that urlfilteredid cannot get dpc record 
+set enforce have true 
+verify that enforce be set to true in telephonyprovider 
+verify urlfilter query only return dpc record 
+verify that urlfilteredid can get dpc record 
+delete test record 
+insert dpc record 
+insert nondpc record 
+verify urltelephony query only return nondpc record 
+verify uritelephony update only nondpc record 
+verify that nondpc record be update 
+verify that dpc record be not update 
+verify uritelephony delete only nondpc record 
+delete remain test record 
+insert dpc record 
+insert nondpc record 
+verify that uridpc query only return dpc record 
+verify that uridpcid update only dpc record 
+verify that nondpc record be not update 
+verify that dpc record be update 
+test uridpcid delete only dpc record 
+delete remain test record 
+insert dpc record 1 
+insert conflict dpc record 
+verity that conflict dpc record be not insert 
+insert dpc record 2 
+update dpc record 2 to the value of dpc record 1 
+verify that database be not update 
+delete test record 
+test insert 
+should catch securityexception 
+have test query 
+should catch securityexception 
+should catch securityexception 
+test update 
+should catch securityexception 
+should catch securityexception 
+have test delete 
+should catch securityexception 
+insert user delete apn 
+insert apn that conflict with edit apn 
+assert that the conflict apn be merge into the exist useredite apn so only 1 have apn exist in the db 
+insert user delete apn 
+insert apn that conflict with edit apn 
+assert that the conflict apn be merge into the exist userdelete apn have entry mark delete will not show up in query so we verify that no apn can have be see 
+create apn 
+insert apn have todo if used urltelephony subscriptionmanagergetdefaultsubscriptionid return 1 
+set prefer apn 
+have query prefer apn 
+verify that prefer apn be set and retreive 
+create apn 
+insert apn have todo if used urltelephony subscriptionmanagergetdefaultsubscriptionid return 1 
+have query apn with default apnsetid 
+query apn with apnsetid1 
+create apn 
+insert apn have we explicitly include subid a subscriptionmanagergetdefaultsubscriptionid return 1 
+have before there a prefer apn set assert that all apn be return 
+set the apn from values3 apnsetid have 1 to the prefer apn 
+query apn with preferapnset url have explicitly include subid a subscriptionmanagergetdefaultsubscriptionid return 1 
+setup for multisim 
+create apn to be delete include mvno value 
+insert apn 
+restore to default 
+get value in table 
+create apn to be delete not include mvno value 
+insert apn 
+restore to default 
+verify that delete result match result of query 
+setup for singlesim 
+restore to default 
+verify that delete value be go 
+insert test contentvalue 
+update wfcenable 
+update other field 
+update wfc used subid 
+test on getcurrentapnlist step 1 
+insert the apn and db only have the mccmnc and mvno apn 
+query db 
+test on getcurrentapnlist step 2 
+insert the apn and db only have the mno apn 
+query db 
+have close mdbhelper database object 
+set up the carrier table 
+set up the siminfo table 

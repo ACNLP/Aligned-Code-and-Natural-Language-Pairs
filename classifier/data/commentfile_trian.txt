@@ -1,0 +1,1526 @@
+0	Indices of buttons for the drop down menu (tabs replacement)  Must match the strings in the array buttons_list in arrays.xml and the  OnNavigationListener
+1	Action bar and Navigation bar (left side of Action bar)
+2	Params for animating the controls on the right
+3	If the query didn't return a cursor for some reason return
+4	 runs every midnight/time changes and refreshes the today icon
+5	Create an observer so that we can update the views whenever a  Calendar event changes.
+6	This needs to be created before setContentView
+7	Get time from intent or icicle
+8	Open EventInfo later
+9	Make sure width is in between allowed min and max width values
+10	setContentView must be called before configureActionBar
+11	configureActionBar auto-selects the first tab you add, so we need to  call it before we set up our own fragments to make sure it doesn't  overwrite us
+12	Must register as the first activity because this activity can modify  the list of event handlers in it's handle method. This affects who  the rest of the handlers the controller dispatches to are.
+13	Listen for changes that would require this to be refreshed
+14	Ignore if mViewEventId can't be parsed
+15	If tablet configuration , show spinner with no dates
+16	 Clear buttons used in the agenda view
+17	Check if the upgrade code has ever been run. If not, force a sync just this one time.
+18	Must register as the first activity because this activity can modify  the list of event handlers in it's handle method. This affects who  the rest of the handlers the controller dispatches to are.
+19	 Make sure the drop-down menu will get its date updated at midnight
+20	Stop listening for changes that would require this to be refreshed
+21	 FRAG_TODO save highlighted days of the week;
+22	Hide the "show/hide controls" button if this is a phone  or the view type is "Month".
+23	replace the default top layer drawable of the today icon with a  custom drawable that shows the day of the month of today
+24	Remove this when transition to and from month view looks fine.
+25	The rules for this previous view are different than the  controller's and are used for intercepting the back button.
+26	Update the current view so that the menu can update its look according to the  current view.
+27	 Show date only on tablet configurations in views different than Agenda
+28	 Clear unnecessary buttons from the option menu when switching from the agenda view
+29	Clear the flag is change to a different view type
+30	hide minimonth and calendar frag
+31	show minimonth and calendar frag
+32	If in Agenda view and "show_event_details_with_agenda" is "true",  do not create the event info fragment here, it will be created by the Agenda  fragment
+33	TODO Fix the temp hack below: && mCurrentView !=  ViewType.AGENDA
+34	start event info as activity
+35	start event info as a dialog
+36	This uses a LinkedHashMap so that we can replace fragments based on the  view id they are being expanded into since we can't guarantee a reference  to the handler will be findable
+37	Simple view of an event
+38	Full detail view in read only mode
+39	full detail view in edit mode
+40	date range has changed, update the title
+41	Event start and end times.  All-day events are represented in:  - local time for GO_TO commands  - UTC time for VIEW_EVENT and other event-related commands
+42	 Used to build the extra long for a VIEW event.
+43	TODO: pass the real allDay status or at least a status that says we don't know the  status and have the receiver query the data.  The current use of this method for VIEW_EVENT is by the day view to show an EventInfo  so currently the missing allDay status has no effect.
+44	TODO Throw exception on invalid events
+45	Suppress event per filter
+46	 Fix up view if not specified
+47	 Set mTime if selectedTime is set
+48	selectedTime is not set so set mTime to startTime iff it is not  within start and end times
+49	 Store the formatting flags if this is an update to the title
+50	 Fix up start time if not specified
+51	Store the eventId if we're entering edit event
+52	 Dispatch to event handler(s)
+53	Handle the 'first' one before handling the others
+54	If this was the 'first' handler it was already handled
+55	 Deregister removed handlers
+56	 Add new handlers
+57	To avoid ConcurrencyException, stash away the event handler for now.
+58	To avoid ConcurrencyException, stash away the event handler for now.
+59	 FRAG_TODO doesn't work yet
+60	 Forces the viewType. Should only be used for initialization.
+61	 Sets the eventId. Should only be used for initialization.
+62	The name of the shared preferences file. This name must be maintained for historical  reasons, as it's what PreferenceManager assigned the first time the file was created.
+63	Write the prefs
+64	Update the db
+65	 skip 0 so query can use it
+66	Write the use home tz setting
+67	 If using a home tz write it to the db
+68	 Only check content resolver if we have a looper to attach to use
+69	When the async query returns it should synchronize on  mTZCallbacks, update mUseHomeTZ, mHomeTZ, and the  preferences, set mTZQueryInProgress to false, and call all  the runnables in mTZCallbacks.
+70	SharedPreferences prefs = getSharedPreferences(context);
+71	SharedPreferences prefs = getSharedPreferences(context, prefsName);
+72	Used to define the look of the menu button according to the current view:  Day view: show day of the week + full date underneath  Week view: show the month + year  Month view: show the month + year  Agenda view: show day of the week + full date underneath
+73	Defines the types of view returned by this spinner
+74	The current selected event's time, used to calculate the date and day of the week  for the buttons.
+75	 Updates time specific variables (time-zone, today's Julian day).
+76	Initialize
+77	 Sets time specific variables and starts a thread for midnight updates
+78	Sets the time zone and today's Julian day to be used by the adapter.  Also, notify listener on the change and resets the midnight update thread.
+79	Sets a thread to run 1 second after midnight and update the current date  This is used to display correctly the date of yesterday/today/tomorrow
+80	 Stops the midnight update thread, called by the activity when it is paused.
+81	Returns the amount of buttons in the menu
+82	Item ID is its location in the list
+83	Check if can recycle the view
+84	Only one kind of view is used
+85	Updates the current viewType  Used to match the label on the menu button with the calendar view
+86	Update the date that is displayed on buttons  Used when the user selects a new day/week/month to watch
+87	Builds a string with the day of the week and the word yesterday/today/tomorrow  before it if applicable.
+88	Builds strings with different formats:  Full date: Month,day Year  Month year  Month day  Month  Week:  month day-day or month day - month day
+89	Calculate the start of the week, taking into account the "first day of the week"  setting.
+90	If week start and end is in 2 different months, use short months names
+91	Stop events cross-fade animation
+92	start the progress spinner
+93	stop the progress spinner
+94	The view hasn't been set yet. Just save the time and use it later.
+95	How does goTo time compared to what's already displaying?
+96	In visible range. No need to switch view
+97	Figure out which way to animate
+98	TODO support a range of time  TODO support event_id  TODO support select message
+99	Ignore
+100	Make this visible within the package for more informative debugging
+101	 Sets the "clicked" color from the clicked event
+102	 Clears the "clicked" color from the clicked event and launch the event
+103	Current selection info for accessibility private int mSelectionDayForAccessibility;         Julian day
+104	Pre-allocate these objects and re-use them
+105	The number of milliseconds to show the popup window
+106	More events text will transition between invisible and this alpha
+107	Pixels scrolled
+108	Animates the height of the allday region
+109	Allow focus in touch mode so that we can do keyboard shortcuts  even after we've entered touch mode.
+110	Allocate space for 2 weeks worth of weekday names so that we can  easily start the week display at any week day.
+111	Also create an array of 2-letter abbreviations.
+112	 If we don't have 2-letter day strings, fall back to 1-letter.
+113	Figure out how much space we need for the 3-letter abbrev names  in the worst case.
+114	Enable touching the popup window
+115	mLines is the array of points used with Canvas.drawLines() in  drawGridBackground() and drawAllDayEvents().  Its size depends  on the max number of lines that can ever be drawn by any single  drawLines() call in either of those methods. final int maxGridLines = (24 + 1)   max horizontal lines we might draw + (mNumDays + 1);  max vertical lines we might draw
+116	Pretend it was a trackball click because that will always  jump to the "View event" screen.
+117	We ignore the "isDst" field because we want normalize() to figure  out the correct DST value and not adjust the selected time based  on the current setting of DST.
+118	We ignore the "isDst" field because we want normalize() to figure  out the correct DST value and not adjust the selected time based  on the current setting of DST.
+119	We ignore the "isDst" field because we want normalize() to figure  out the correct DST value and not adjust the selected time based  on the current setting of DST.
+120	Above visible region
+121	Below visible region
+122	target hour + 1 (to give it room to see the event) -  grid height (to get the y of the top of the visible  region)
+123	 Called from animation framework via reflection. Do not remove
+124	We ignore the "isDst" field because we want normalize() to figure  out the correct DST value and not adjust the selected time based  on the current setting of DST.
+125	Don't show day of the month if for multi-day view
+126	 Abbreviate the month if showing multiple months
+127	Compare beginning of range
+128	Compare end of range
+129	in visible time
+130	Midnight of following day
+131	Set the base date to the beginning of the week if we are displaying  7 days at a time.
+132	This would be about 1 day worth in a 7 day view
+133	Shrink to fit available space but make sure we can display at least two events
+134	First, clear the array of earliest start times, and the array  indicating presence of an all-day event.
+135	The min is where 24 hours cover the entire visible area
+136	Calculate mAllDayHeight
+137	Allow the all-day area to grow in height depending on the  number of all-day events we need to show, up to a limit.
+138	if we have more than the magic number, check if we're animating  and if not adjust the sizes appropriately
+139	Don't shrink the space past the final allDay space. The animation  continues to hide the last event so the more events text can  fade in.
+140	Try to fit all the events in
+141	 But clip the area depending on which mode we're in
+142	Set up the expand icon position
+143	Compute the top of our reachable view
+144	When we change the base date, the number of all-day events may  change and that changes the cell height.  When we switch dates,  we use the mFirstHourOffset from the previous view, but that may  be too large for the new view if the cell height is smaller.
+145	When we get new events we don't want to dismiss the popup unless the event changes
+146	Redraw the screen so that the selection box will be redrawn.  We may  have scrolled to a different part of the day in some other view  so the selection box in this view may no longer be visible.
+147	This is the Week view.  With touch, we always switch to Day/Agenda View  With track ball, if we selected a free slot, then create an event.  If we selected a specific event, switch to EventInfo view.
+148	 Announce only the changes i.e. day or hour or both
+149	Read out the relevant event(s)
+150	Read out all the events
+151	Read out x of numEvents if there are more than one event
+152	Read out x of numEvents if there are more than one event
+153	We have to allocate these animation objects each time we switch views  because that is the only way to set the animation parameters.
+154	This is called after scrolling stops to move the selected hour  to the visible part of the screen.
+155	Compute the first full hour that is visible on screen
+156	If the selected hour is at least 2 time slots from the top and  bottom of the screen, then don't scroll the view.
+157	If there are all-days events for the selected day but there  are no more normal events earlier in the day, then jump to  the all-day event area.  Exception 1: allow the user to scroll to 8am with the trackball  before jumping to the all-day event area.  Exception 2: if 12am is on screen, then allow the user to select  12am before going up to the all-day event area.
+158	Protect against this being called before this view has been  initialized.         if (mContext == null) {             return;         }
+159	return;         }
+160	Make sure our time zones are up to date
+161	The start date is the beginning of the week at 12am
+162	 Avoid reloading events unnecessarily.
+163	load events in the background         mContext.startProgressSpinner();
+164	 Create a shorter array for all day events
+165	 New events, new layouts
+166	 Start animation to cross fade the events
+167	Compute the layout relation between each event before measuring cell  width, as the cell width should be adjusted along with the relation.   Examples: A (1:00pm - 1:01pm), B (1:02pm - 2:00pm)  We should mark them as "overwapped". Though they are not overwapped logically, but  minimum cell height implicitly expands the cell height of A and it should look like  (1:00pm - 1:15pm) after the cell height adjustment.
+168	Compute the space needed for the all-day events, if any.  Make a pass over all the events, and keep track of the maximum  number of all-day events in any one day.  Also, keep track of  the earliest event in each day.
+169	Count all the events being drawn as allDay events
+170	Also check the end hour in case the event spans more than  one day.
+171	Prevent infinite recursive calls to onDraw().
+172	If we drew another view we already translated it back  If we didn't draw another view we should be at the edge of the  screen
+173	Draw the fixed areas (that don't scroll) directly to the canvas.
+174	 Draw overscroll glow
+175	 Draw the AM and PM indicators if we're in 12 hour mode
+176	This isn't really the upper-left corner. It's the square area just  below the upper-left corner, above the hours and to the left of the  all-day area.
+177	Draw the allDay expand/collapse icon
+178	 Computes the x position for the left side of the given day (base 0)
+179	First, color the labels area light gray
+180	Future
+181	Multiday - tomorrow is visible.
+182	Draw the future highlight
+183	Draw the horizontal day background banner  p.setColor(mCalendarDateBannerBackground);  r.top = 0;  r.bottom = DAY_HEADER_HEIGHT;  r.left = 0;  r.right = mHoursWidth + mNumDays * (mCellWidth + DAY_GAP);  canvas.drawRect(r, p);   Fill the extra space on the right side with the default background  r.left = r.right;  r.right = mViewWidth;  p.setColor(mCalendarGridAreaBackground);  canvas.drawRect(r, p);
+184	Also draw the "PM"
+185	Draw each day
+186	TODO Wow, this needs cleanup. drawEvents loop through all the  events on every call.
+187	 If this is today
+188	 And the current time shows up somewhere on the screen
+189	Draw day of the month
+190	Draw day of the week
+191	Draw day of the week
+192	Draw day of the month
+193	Draw the inner horizontal grid lines
+194	 Draw the inner vertical grid lines
+195	Restore the saved style.
+196	 Draw background for grid area
+197	Draw a white background for the time later than current time
+198	Draw today with a white background for the time later than current time
+199	 Paint Tomorrow and later days with future color
+200	Future
+201	There is no event at the selected hour, so create a new event.
+202	MAX - 1 since we add a space
+203	Leave a one pixel boundary on the left and right of the rectangle for the event
+204	Draw the inner vertical grid lines
+205	We draw one fewer event than will fit so that more events text  can be drawn
+206	clip at the end of the animating space
+207	 Prevent a single event from getting too big
+208	Leave a one-pixel space between the vertical day lines and the  event rectangle.
+209	check if we should skip this event. We skip if it starts  after the clip bound or ends after the skip bound and we're  not animating.
+210	 Check if this all-day event intersects the selected day
+211	If the more allday text should be visible, draw it.
+212	Compute the neighbors for the list of all-day events that  intersect the selected day.
+213	Set the selection position to zero so that when we move down  to the normal event area, we will highlight the topmost event.
+214	 Helper method for counting the number of allday events skipped on each day
+215	 Draws the "box +n" text for hidden allday events
+216	 First, clear all the links
+217	For each event in the selected event list "mSelectedEvents", find  its neighbors in the up and down directions. This could be done  more efficiently by sorting on the Event.getColumn() field, but  the list is expected to be very small.
+218	Find the event in the same row as the previously selected all-day  event, if any.
+219	Use the selected hour as the selection region
+220	 Don't draw it if it is not visible
+221	 Don't draw text if it is not visible
+222	Draw the Event Rect
+223	 If this event is selected, then use the selection color
+224	Setup rect for drawEventText which follows
+225	Sanitize a string before passing it to drawText or else we get little  squares. For newlines and tabs before a comma, delete the character.  Otherwise, just replace them with a space.
+226	drawEmptyRect(canvas, rect, 0xFFFF00FF);  for debugging
+227	 If the rectangle is too small for text, then return
+228	+ 2 is small workaround when the font is slightly bigger then the rect. This will  still allow the text to be shown without overflowing into the other all day rects.
+229	Use a StaticLayout to format the string.
+230	There's a bug somewhere. If this rect is outside of a previous  cliprect, this becomes a no-op. What happens is that the text draw  past the event rect. The current fix is to not draw the staticLayout  at all if it is completely out of bound.
+231	The following routines are called from the parent activity when certain  touch events occur.
+232	Save selection information: we use setSelectionFromPosition to find the selected event  in order to show the "clicked" color. But since it is also setting the selected info  for new events, we need to restore the old info after calling the function.
+233	If a time was selected (a blue selection box is visible) and the click location  is in the selected time, do not show a click on an event to prevent a situation  of both a selection and an event are clicked when they overlap.
+234	 Kicks off all the animations when the expand allday area is tapped
+235	 Determine the starting height
+236	Set up delays and start the animators
+237	This is the only animator that can return null, so check it
+238	 Sets up an animator for changing the height of allday events
+239	First calculate the absolute max height
+240	 if there's nothing to animate just return
+241	Set up the animator with the calculated values
+242	 Sets up an animator for changing the height of the allday area
+243	Calculate the absolute max height
+244	Set up the animator with the calculated values
+245	when finished, set this to 0 to signify not animating
+246	 setter for the 'box +n' alpha text used by the animator
+247	 setter for the height of the allday area used by the animator
+248	 setter for the height of allday events used by the animator
+249	check if the tap was in the allday expansion area
+250	If the tap is on an event, launch the "View event" view
+251	 Scale gesture in progress
+252	return if the touch wasn't on an area of concern
+253	Calculate the hour that correspond to the average of the Y touch points
+254	If we haven't figured out the predominant scroll direction yet,  then do it now.
+255	We are already scrolling horizontally, so check if we  changed the direction of scrolling so that the other week  is now visible.
+256	The user has switched the direction of scrolling  so re-init the next view
+257	Calculate the top of the visible region in the calendar grid.  Increasing/decrease this will scroll the calendar grid up/down.
+258	If dragging while already at the end, do a glow
+259	Calculate the hour that correspond to the average of the Y touch points
+260	cancel() doesn't terminate cleanly.
+261	cancel() doesn't terminate cleanly.
+262	Horizontal fling.  initNextView(deltaX);
+263	Vertical fling.
+264	Continue scrolling vertically
+265	When flinging down, show a glow when it hits the end only if it  wasn't started at the top
+266	Change the view to the previous day or week
+267	 ScaleGestureDetector.OnScaleGestureListener
+268	 ScaleGestureDetector.OnScaleGestureListener
+269	If mStartingSpanY is too small, even a small increase in the  gesture can bump the mCellHeight beyond MAX_CELL_HEIGHT
+270	 ScaleGestureDetector.OnScaleGestureListener
+271	If we were scrolling, then reset the selected hour so that it  is visible.
+272	The user has gone beyond the threshold so switch views
+273	Not beyond the threshold so invalidate which will cause  the view to snap back. Also call recalc() to ensure  that we have the correct starting date and title.
+274	This case isn't expected to happen.
+275	If the trackball is held down, then the context menu pops up and  we never get onKeyUp() for the long-press. So check for it here  and change the selection to the long-press state.
+276	Store selection info and restore it at the end. This way, we can invoke the  right accessibility message without affecting the selection.
+277	y is now offset from top of the scrollable region
+278	 Restore old values
+279	Leave a gap for the 'box +n' text
+280	Don't check non-allday events or events that aren't shown
+281	If the touch is inside the event rectangle, then  add the event.
+282	Find the closest event
+283	Adjust y for the scrollable bitmap
+284	Use a region around (x,y) for the selection region
+285	 Compute the event rectangle.
+286	If the event intersects the selection region, then add it to  mSelectedEvents.
+287	If there are any events in the selected region, then assign the  closest one to mSelectedEvent.
+288	Keep the selected hour and day consistent with the selected  event. They could be different if we touched on an empty hour  slot very close to an event in the previous hour slot. In  that case we will select the nearby event.
+289	Encapsulates the code to continue the scrolling after the  finger is lifted. Instead of stopping the scroll immediately,  the scroll continues to "free spin" and gradually slows down.
+290	Allow overscroll/springback only on a fling,  not a pull/fling from the end
+291	Protect against null-pointer exceptions
+292	Protect against null-pointer exceptions
+293	% causes update to occur on 5 minute marks (11:10, 11:15, 11:20, etc.)
+294	Make sure that click feedback is gone when you scroll from the  all day area
+295	The rest of this file was borrowed from Launcher2 - PagedView.java
+296	 TODO: should Event be Parcelable so it can be passed via Intents?
+297	 The projection to use when querying instances to build a list of events
+298	The indices for the projection array above.
+299	The coordinates of the event rectangle drawn on the screen.
+300	These 4 fields are used for navigating among events within the selected  hour in the Day and Week view.
+301	We use the byDay instances query to get a list of all events for  the days we're interested in.  The sort order is: events with an earlier start time occur  first and if the start times are the same, then events with  a later end time occur first. The later end time is ordered  first so that long rectangles in the calendar views appear on  the left side.  If the start and end times of two events are  the same then we sort alphabetically on the title.  This isn't  required for correctness, it just adds a nice touch.
+302	Respect the preference to show/hide declined events
+303	Check if we should return early because there are more recent  load requests waiting.
+304	Read the color from the database
+305	Check if this is a repeating event
+306	Compute the column positions separately for the all-day events
+307	Process all-day events separately
+308	If the active list is empty, then reset the max columns, clear  the column bit mask, and empty the groupList.
+309	Find the first empty column.  Empty columns are represented by  zero bits in the column mask "colMask".
+310	Remove the inactive allday events. An event on the active list  becomes inactive when the end day is less than the current event's  start day.
+311	Append the location to the title, unless the title ends with the  location (for example, "meeting in building 42" ends with the  location).
+312	Use >= so we'll pick up Exchange allday events
+313	This is the space from the grid line to the event rectangle.
+314	Computes the rectangle coordinates of the given event on the screen.  Returns true if the rectangle is visible on the screen.
+315	If the event started on a previous day, then show it starting  at the beginning of this day.
+316	If the event ends on a future day, then show it extending to  the end of this day.
+317	If the end point aligns on a cell boundary then count it as  ending in the previous cell so that we don't cross the border  between hours.
+318	 Make the rectangle be at least mMinEventHeight pixels high
+319	x,y is inside the event rectangle
+320	x > right
+321	the upper right corner
+322	the lower right corner
+323	the upper left corner
+324	the lower left corner
+325	Create an observer so that we can update the views whenever a  Calendar event changes.
+326	Get the info needed for the fragment
+327	Support non-standard VIEW intent format: dat = content:com.android.calendar/events/[id]/EventTime/[start]/[end]
+328	do nothing here , deal with it later
+329	Parsing failed on the start or end time , make sure the times were not  pulled from the intent's extras and reset them.
+330	If we do not support showing full screen event info in this configuration,  close the activity and show the event in AllInOne.
+331	Get the fragment if exists
+332	Remove the application title
+333	 Create a new fragment if none exists
+334	From the Android Dev Guide: "It's important to note that when  onNewIntent(Intent) is called, the Activity has not been restarted,  so the getIntent() method will still return the Intent that was first  received with onCreate(). This is why setIntent(Intent) is called  inside onNewIntent(Intent) (just in case you call getIntent() at a  later time)."
+335	Style of view
+336	Query tokens for QueryHandler
+337	Since this is run after a delay, make sure to only show the message  if the event's data is not shown yet.
+338	 This is currently required by the fragment manager.
+339	On tablets , do smart positioning of dialog  On phones , use the whole screen
+340	Implements OnCheckedChangeListener
+341	Use hardware layer for better performance during animation
+342	 Hide Edit/Delete buttons if in full screen mode on a phone
+343	 Show color/edit/delete buttons only in non-dialog configuration
+344	 If we're a dialog we don't want to handle menu buttons
+345	3rd parties might not have specified the start/end time when firing the  Events.CONTENT_URI intent.  Update these with values read from the db.
+346	 What
+347	When  Set the date and repeats (if any)
+348	 Display the datetime.  Make the timezone (if any) transparent.
+349	Organizer view is setup in the updateCalendar method
+350	 Where
+351	 Launch Custom App
+352	For dialogs, just close the fragment  For full screen, close activity on phone, leave it for tablet
+353	Clear the event days
+354	query which days have events
+355	Set all the days with events to true
+356	 Check if we are still the most recent request.
+357	The put() method fails with InterruptedException if the  queue is full. This should never happen because the queue  has no limit.
+358	Wait for the next request
+359	If there are a bunch of requests already waiting, then  skip all but the most recent request.
+360	Let the request know that it was skipped
+361	Skip to the next request
+362	Increment the sequence number for requests.  We don't care if the  sequence numbers wrap around because we test for equality with the  latest one.
+363	Send the load request to the background thread
+364	The put() method fails with InterruptedException if the  queue is full. This should never happen because the queue  has no limit.
+365	Send load request to the background thread
+366	The put() method fails with InterruptedException if the  queue is full. This should never happen because the queue  has no limit.
+367	The name of the shared preferences file. This name must be maintained for historical  reasons, as it's what PreferenceManager assigned the first time the file was created.
+368	Preference keys
+369	These must be in sync with the array preferences_week_start_day_values
+370	These keys are kept to enable migrating users from previous versions
+371	Default preference values
+372	Make sure to always use the same preferences file regardless of the package name  we're running under
+373	Load the preferences from an XML resource
+374	This triggers an asynchronous call to the provider to refresh the data in shared pref
+375	Utils.getTimeZone will return the currentTimeZone instead of the one  in the shared_pref if home time zone is disabled. So if home tz is  off, we will explicitly read it.
+376	If needed, migrate vibration setting from a previous version
+377	 If needed, migrate the old alerts type settin
+378	Pass it on to the next Activity.
+379	no browser installed? Just drop it.
+380	The current state for this button, ranging from 0 to maxState-1
+381	Currently using the standard buttonStyle, will update when new resources are added.
+382	TODO add a more generic default button
+383	When moved out of Calendar the tag should be changed.
+384	The name of the shared preferences file. This name must be maintained for  historical reasons, as it's what PreferenceManager assigned the first  time the file was created.
+385	Must be the same keys that are used in the other_preferences.xml file.
+386	This code is needed only if dataset changes do not force a call to OnScroll  protected DataSetObserver mListDataObserver = null;
+387	This code is needed only if dataset changes do not force a call to  OnScroll  if (mAdapter != null && mListDataObserver != null) {  mAdapter.unregisterDataSetObserver(mListDataObserver);  }
+388	mAdapter.unregisterDataSetObserver(mListDataObserver);  }
+389	 This code is needed only if dataset changes do not force a call to OnScroll
+390	mListDataObserver = new DataSetObserver() {         @Override         public void onChanged() {             onDataChanged();         }     };  }
+391	@Override         public void onChanged() {             onDataChanged();         }     };  }
+392	onDataChanged();         }     };  }
+393	 Try to make sure we have an adapter to work with (may not succeed).
+394	Get the section header position
+395	New section - set it in the header view
+396	 No header for current position , use the dummy invisible one, hide the separator
+397	Create a copy of the header view to show on top
+398	Do transitions  If position of bottom of last item in a section is smaller than the height of the  sticky header - shift drawable of header.
+399	Update new header height
+400	Resets the sticky header when the adapter data set was changed  This code is needed only if dataset changes do not force a call to OnScroll  protected void onDataChanged() {  Should do a call to updateStickyHeader if needed  }
+401	Should do a call to updateStickyHeader if needed  }
+402	Find a child ListView (if any)
+403	 No child ListView - add one
+404	Create a dummy view , it will be used in case a section has no header
+405	Set to 0 until we have UI to perform undo
+406	For recurring events which instances of the series are being modified
+407	When the edit event view finishes it passes back the appropriate exit  code.
+408	Defines used by the DNA generation code
+409	The name of the shared preferences file. This name must be maintained for  historical  reasons, as it's what PreferenceManager assigned the first time the file  was created.
+410	This is the "detail" view which is either agenda or day view
+411	Not sure who uses this. This logic came from LaunchActivity
+412	Default to the last view
+413	Migrate setting to new 4.2 behavior   silent and never -> off  always -> on
+414	Record the detail start view
+415	Record the (new) start view
+416	If the time was specified, then use that. Otherwise, use the current  time.
+417	This takes a color and computes what it would look like blended with  white. The result is the color that should be used for declined events.
+418	The upgrade receiver has been disabled, which means this code has been run before,  so no need to sync.
+419	Now unregister the receiver so that we won't continue to sync every time.
+420	A single strand represents one color of events. Events are divided up by  color to make them convenient to draw. The black strand is special in  that it holds conflicting events as well as color settings for allday on  each day.
+421	A segment is a single continuous length of time occupied by a single  color. Segments should never span multiple days.
+422	There are slightly fewer than half as many pixels in 1/6 the space,  so round to 2.5x for the min minutes in the non-work area
+423	 Go through all the events for the week
+424	if this event is outside the weeks range skip it
+425	If it's less than minPixels in an area before the work  day
+426	extend the end to the first easy guarantee that it's  minPixels
+427	 if it's in the area after the work day
+428	First try shifting the end but not past midnight
+429	 if it's still too small move the start back
+430	 This handles adding the first segment
+431	 for each segment this event intersects with
+432	if the segment is already a conflict ignore it
+433	 If this event extends beyond the last segment add a new segment
+434	This figures out allDay colors as allDay events are found
+435	 if we haven't initialized the allDay portion create it now
+436	For each day this event is on update the color
+437	if this day already had a color, it is now a conflict
+438	else it's just the color of the event
+439	This processes all the segments, sorts them by color, and generates a  list of points to draw
+440	First, get rid of any colors that ended up with no segments
+441	 Go through each segment and compute its points
+442	Add the points to the strand of that color
+443	 If this is a multiday event split it up by day
+444	 Nearly recursive iteration!
+445	Calculate the time until midnight + 1 second and set the handler to  do run the runnable
+446	 Stop the midnight update thread
+447	Configure date/time formatting.
+448	All day events require special timezone adjustment.
+449	If possible, use "Today" or "Tomorrow" instead of a full date string.
+450	For multi-day allday events or single-day all-day events that are not  today or tomorrow, use framework formatter.
+451	Format the time.
+452	If possible, use "Today" or "Tomorrow" instead of a full date string.
+453	Example: "Today at 1:00pm - 2:00 pm"
+454	Example: "Tomorrow at 1:00pm - 2:00 pm"
+455	Format the full date. Example: "Thursday, April 12, 1:00pm - 2:00pm"
+456	For multiday events, shorten day/month names.  Example format: "Fri Apr 6, 5:00pm - Sun, Apr 8, 6:00pm"
+457	Figure out if this is in DST
+458	An event ending at midnight should still be a single-day event, so check  time end-1.
+459	Using int constants as a return value instead of an enum to minimize resources.
+460	Reuse current drawable if possible
+461	Can't find version; just leave it blank.
+462	Add a slight delay for the EVENT_REMINDER_APP broadcast for a couple reasons:  (1) so that the concurrent reminder broadcast from the provider doesn't result  in a double ring, and (2) some OEMs modified the provider to not add an alert to  the CalendarAlerts table until the alert time, so for the unbundled app's  notifications to work on these devices, a delay ensures that AlertService won't  read from the CalendarAlerts table until the alert is present.
+463	The reminders query looks like "SELECT ... AND eventId IN 101,102,202,...".  This  sets the max # of events in the query before batching into multiple queries, to  limit the SQL query length.
+464	We really need to query for reminder times that fall in some interval, but  the Reminders table only stores the reminder interval (10min, 15min, etc), and  we cannot do the join with the Events table to calculate the actual alert time  from outside of the provider.  So the best we can do for now consider events  whose start times begin within some interval (ie. 1 week out).  This means  reminders which are configured for more than 1 week out won't fire on time.  We  can minimize this to being only 1 day late by putting a 1 day max on the alarm time.
+465	VisibleForTesting
+466	Expand Instances table range by a day on either end to account for  all-day events.
+467	Build query for all events starting within the fixed interval.
+468	allday selection
+469	non-allday selection
+470	Put query results of all events starting within some interval into map of event ID to  local start time.
+471	Adjust allday to local time.
+472	 Log for debugging.
+473	Query the reminders table for the events found.
+474	Process the reminders query results to find the next reminder time.
+475	 Schedule the alarm for the next reminder time.
+476	Max out the alarm time to 1 day out, so an alert for an event far in the future  (not present in our event query results for a limited range) can only be at  most 1 day late.
+477	Add a slight delay (see comments on the member var).
+478	Schedule an EVENT_REMINDER_APP broadcast with AlarmManager.  The extra is  only used by AlertService for logging.  It is ignored by Intent.filterEquals,  so this scheduling will still overwrite the alarm that was previously pending.  Note that the 'setClass' is required, because otherwise it seems the broadcast  can be eaten by other apps and we somehow may never receive it.
+479	The broadcast for notification refreshes scheduled by the app. This is to  distinguish the EVENT_REMINDER broadcast sent by the provider.
+480	Create the base notification.
+481	Turn off timestamp.
+482	Should be one of the values in Notification (ie. Notification.PRIORITY_HIGH, etc).  A higher priority will encourage notification manager to expand it.
+483	The grace period before changing a notification's priority bucket.
+484	Hard limit to the number of notifications displayed.
+485	 Added wrapper for testing
+486	popup?  notification id?
+487	 Added wrapper for testing
+488	We use one notification id for the expired events notification.  All  other notifications (the 'active' future/concurrent ones) use a unique ID.
+489	A flag for using local storage to save alert state instead of the alerts DB table.  This allows the unbundled app to run alongside other calendar apps without eating  alerts from other apps.
+490	 Dismiss a specific fired alarm if id is present, otherwise, dismiss all alarms
+491	NOTE: I don't believe that this ever happens.
+492	 Remove from notification bar.
+493	Show event on Calendar app by building an intent and task stack to start  EventInfoActivity with AllInOneActivity as the parent activity rooted to home.
+494	Delay for rescheduling the alarms must be great enough to minimize race  conditions with the provider's boot up actions.
+495	Delay to avoid race condition of in-progress alarm scheduling in provider.
+496	java.lang.IllegalArgumentException:      Unknown URI content:com.android.calendar/schedule_alarms_remove
+497	Until b/7742576 is resolved, just catch the exception so the app won't crash
+498	Set listener
+499	Populate responses
+500	Add "Custom response..."
+501	implements OnItemClickListener
+502	Start thread to query provider and send mail
+503	 Compute the new set of days with events
+504	If agenda view is visible with month view , refresh the views  with the selected day's info
+505	Else , switch to the detailed view
+506	Event was tapped - switch to the detailed view making sure the click animation  is done first.
+507	Animate a click - on down: show the selected day in the "clicked" color.  On Up/scroll/move/cancel: hide the "clicked" color.
+508	 No need to cancel on vertical movement, ACTION_SCROLL will do that.
+509	 Clear the visual cues of the click animation and related running code.
+510	Perform the tap animation in a runnable to allow a delay before showing the tap color.  This is done to prevent a click animation when a fling is done.
+511	Performs the single tap operation: go to the tapped day.  This is done in a runnable to allow the click animation to finish before switching views
+512	Selection and selection args for adding event queries
+513	Start the loader again
+514	 Used to load the events when a delay is needed
+515	Create a new uri with the updated times
+516	 Extract range of julian days from URI
+517	TODO fix selection/selection args after b/3206641 is fixed
+518	To get a smoother transition when showing this fragment, delay loading of events until  the fragment is expended fully and the calendar controls are gone.
+519	TODO
+520	We've started a new query since this loader ran so ignore the  result
+521	TODO remove this after b/3387924 is resolved
+522	If we need to flash today start the animation after any  movement from listView has ended.
+523	Add enough space for 7 more boxes to be drawn
+524	Sets the list of events for this week. Takes a sorted list of arrays  divided up by day for generating the large month version and the full  arraylist sorted by start time to generate the dna version.
+525	Stash the list of events for use when this view is ready, or  just clear it if a null set has been passed to this view
+526	clear the cached set of events since we're ready to build it now
+527	 Create the drawing coordinates for dna
+528	TODO move into SimpleWeekView  Computes the x position for the left side of the given day
+529	This adds the first line separating the week number
+530	 compute left edge for i, set up r, draw
+531	 Draw the "clicked" color on the tapped day
+532	Make sure the color will be set back on the next  iteration
+533	Determine if everything will fit when time ranges are shown.
+534	Add a few pixels for the box we draw around all-day events.
+535	Need room for the "1pm - 2pm" line.
+536	More events follow.  Leave a bit of space between events.
+537	Make sure we have room for the "+ more" line.  (The "+ more" line is expected  to be <= the height of an event line, so we won't show "+1" when we could be  showing the event.)
+538	Not enough space, return original y
+539	We shift the render offset "inward", because drawRect with a stroke width greater  than 1 draws outside the specified bounds.  (We don't adjust the left edge, since  we want to match the existing appearance of the "event square".)
+540	Text color needs to contrast with solid background.
+541	Use "declined event" color.
+542	Text inside frame is same color as frame.
+543	Use generic event text color.
+544	show start/end time, e.g. "1pm - 2pm"
+545	Draw event and conflict times
+546	this adds at most 7 draws. We could sort it by color and  build an array instead but this is easier.
+547	This week is weird...
+548	Affects when the month selection will change while scrolling up
+549	You can override these numbers to get a different appearance
+550	These affect the scroll speed and feel
+551	highlighted time
+552	disposable variable used for time calculations
+553	 This causes an update of the view at midnight
+554	 This allows us to update our position when a day is tapped
+555	Ensure we're in the correct time zone
+556	 Adjust sizes for screen density
+557	Configure the listview
+558	Get default week start based on locale, subtracting one for use with android Time.
+559	 Set the selected day
+560	If this view isn't returned yet we won't be able to load the lists  current position, so return after setting the selected day.
+561	 Find a child that's completely in the view
+562	Compute the first and last position visible
+563	Otherwise just set the selection
+564	Figure out where we are
+565	 If we have moved since our last call update the direction
+566	Figure out where we are
+567	Find out which month we're moving into
+568	And how it relates to our current highlighted month
+569	Only switch months if we're scrolling away from the currently  selected month
+570	Takes the start of the week
+571	Takes the start of the following week
+572	use a post to prevent re-entering onScrollStateChanged before it  exits
+573	TODO Remove calendar imports when the required methods have been  refactored into the public api
+574	Get default week start based on locale, subtracting one for use with android Time.
+575	pass in all the view parameters
+576	used for scaling to the device density
+577	affects the padding on the sides of this view
+578	Cache the number strings so we don't have to recompute them each time
+579	Sets up any standard paints that will be used
+580	 We keep the current value for any params not present
+581	Allocate space for caching the day numbers and focus values
+582	If we're showing the week number calculate it based on Monday
+583	Now adjust our starting day based on the start day of the week  If the week is set to start on a Saturday the first week will be  Dec 27th 1969 -Jan 2nd, 1970
+584	Figure out what day today is
+585	This week is weird...
+586	 Adjust all-day times into local timezone
+587	we might get some extra events when querying, in order to  deal with all-day events
+588	We don't show day header in today
+589	Add the event row infos
+590	Compute a human-readable string for the start time of the event
+591	 What
+592	 Where
+593	TODO Move these to Calendar.java
+594	Handle calendar-specific updates ourselves because they might be  coming in without extras, which AppWidgetProvider then blocks.
+595	Unsubscribe from all AlarmManager updates
+596	Launch over to service so it can perform update
+597	Launch calendar app when the user taps on the header
+598	Each list item will call setOnClickExtra() to let the list know  which item  is selected by a user.
+599	If we do not have an event id - start AllInOne
+600	Suppress unnecessary logging about update time. Need to be static as this object is  re-instanciated frequently.  TODO: It seems loadData() is called via onCreate() four times, which should mean  unnecessary CalendarFactory object is created and dropped. It is not efficient.
+601	If there is a newer load request in the queue, skip loading.
+602	This is being created as part of onReceive
+603	we use getCount here so that it doesn't return null when empty
+604	40% opacity
+605	 An element in ListView.
+606	if there are no events, we still return 1 to represent the "no  events" view
+607	Search for events from now until some time in the future
+608	Make sure an update happens at midnight or earlier
+609	 We want to update widget when we enter/exit time range of an event.
+610	Copy it to a local static cursor.
+611	Schedule an alarm to wake ourselves up for the next update.  We also cancel  all existing wake-ups because PendingIntents don't match  against extras.
+612	If no next-update calculated, or bad trigger time in past,  schedule  update about six hours from now.
+613	We cannot do any queries from the UI thread, so push the 'selection' query  to a background thread.  However the implementation of the latter query  (cursor loading) uses CursorLoader which must be initiated from the UI thread,  so there is some convoluted handshaking here.   Note that as currently implemented, this must run in a single threaded executor  or else the loads may be run out of order.   TODO: Remove use of mHandler and CursorLoader, and do all the work synchronously  in the background thread.  All the handshaking going on here between the UI and  background thread with using goAsync, mHandler, and CursorLoader is confusing.
+614	We always complete queryForSelection() even if the load task ends up being  canceled because of a more recent one.  Optimizing this to allow  canceling would require keeping track of all the PendingResults  (from goAsync) to abort them.  Defer this until it becomes a problem.
+615	 TODO: finish fake implementation.
+616	 TODO: finish implementation, perhaps using an in-memory table
+617	TODO: not currently implemented
+618	 If the year is zero, then set it to the current year.
+619	Single point in time.  (not a range)
+620	 First date is Thursday, Jan 1st, 1970.
+621	Set up fake db.
+622	Must reset the timezone here, because even though the fake provider will be  recreated/cleared, TimeZoneUtils statically holds on to a cached value.
+623	 Helper function to create test events for BusyBits testing
+624	4/12/2000 5pm - 4/12/2000 6pm
+625	12/31/2012 5pm - 1/1/2013 6pm
+626	4/12/2012 5pm - 4/12/2012 6pm
+627	4/10/2012 5pm - 4/10/2012 6pm
+628	4/10/2012 5pm - 4/11/2012 12am
+629	4/11/2012 12:01AM - 4/11/2012 11:59pm
+630	4/9/2012 5pm - 4/9/2012 6pm
+631	4/10/2012 12:01AM - 4/11/2012 12:01AM
+632	4/2/2012 12:00AM - 4/3/2012 12:00AM
+633	4/10/2012 12:00AM - 4/11/2012 12:00AM
+634	4/10/2012 12:00AM - 4/13/2012 12:00AM
+635	4/12/2012 5pm - 4/12/2012 6pm (Pacific)
+636	4/2/2012 12:00AM - 4/3/2012 12:00AM
+637	4/2/2012 12:00AM - 4/3/2012 12:00AM
+638	TODO: add tests for army time.
+639	4/12/2012 5pm
+640	1/12/2012 5pm (not daylight savings)
+641	4/12/2012 5pm (daylight savings)
+642	adb shell am instrument -w -e class com.android.calendar.widget.CalendarAppWidgetServiceTest    com.google.android.calendar.tests/android.test.InstrumentationTestRunner
+643	TODO Disabled test since this CalendarAppWidgetModel is not used for the no event case      @SmallTest     public void testGetAppWidgetModel_noEvents() throws Exception {          Input         MatrixCursor cursor = new MatrixCursor(CalendarAppWidgetService.EVENT_PROJECTION, 0);           Expected Output         CalendarAppWidgetModel expected = new CalendarAppWidgetModel();         expected.visibNoEvents = View.VISIBLE;           Test         long now = 1270000000000L;         MarkedEvents events = CalendarAppWidgetService.buildMarkedEvents(cursor, null, now);         CalendarAppWidgetModel actual = CalendarAppWidgetService.getAppWidgetModel(                 getTestContext(), cursor, events, now);          assertEquals(expected.toString(), actual.toString());     }
+644	Input         MatrixCursor cursor = new MatrixCursor(CalendarAppWidgetService.EVENT_PROJECTION, 0);           Expected Output         CalendarAppWidgetModel expected = new CalendarAppWidgetModel();         expected.visibNoEvents = View.VISIBLE;           Test         long now = 1270000000000L;         MarkedEvents events = CalendarAppWidgetService.buildMarkedEvents(cursor, null, now);         CalendarAppWidgetModel actual = CalendarAppWidgetService.getAppWidgetModel(                 getTestContext(), cursor, events, now);          assertEquals(expected.toString(), actual.toString());     }
+645	Set the "current time" to 2am tomorrow.
+646	Input  allDay, begin, end, title, location, eventId
+647	Expected Output
+648	Test
+649	Expected Output
+650	Test
+651	catch generic Exception, since we may be called with a media  content URI, another content provider's URI, a file URI,  an http URI, and there are different exceptions associated  with failure to open each of those.
+652	Couldn't find anything to display, what to do now?
+653	try to get title and artist from the media content provider
+654	Try to get the display name from another content provider.  Don't specifically ask for the display name though, since the  provider might not actually support that column.
+655	check if this file is in the media database (clicking on a download  in the download manager might follow this path
+656	We can't get metadata from the file/stream itself yet, because  that API is hidden, so instead we display the URI being played
+657	this activity has handed its MediaPlayer off to the next activity  (e.g. portrait/landscape switch) and should abandon its focus
+658	 Protection for case of simultaneously tapping on seek bar and exit
+659	Protection for case of simultaneously tapping on play/pause and exit
+660	Start a new MediaSession
+661	Not needed.
+662	Not needed.
+663	is held by weak reference, we must retain it for it to continue to be called.
+664	First let's find the center of the view.
+665	First let's find the center of the view.
+666	 {@link #Paint.setAlpha} is a helper method that just sets the alpha portion of the
+667	color. {@link #Paint.setPaint} will clear any previously set alpha value.
+668	 {@link #Paint.setAlpha} is a helper method that just sets the alpha portion of the
+669	color. {@link #Paint.setPaint} will clear any previously set alpha value.
+670	Retrieve the sizes of the drawable and the view.
+671	Scale the drawable down to fit the view, if needed.
+672	Center the drawable within the view.
+673	Not supported.
+674	Not supported.
+675	Each item will occupy one third of the height.
+676	Top and bottom boundaries for tap checking.  Need to recompute by calling computeTapRegions  before referencing.
+677	Temp variable for storing locations on screen.
+678	TODO: Consider clearing this when underlying data set changes. If the data set changes, you  can't safely assume that this pressed view is in the same place as it was before and it will  receive setPressed(false) unnecessarily. In theory it should be fine, but in practice we  have places like this: mIconView.setCircleColor(pressed ? mPressedColor : mSelectedColor);  This might set selected color on non selected item. Our logic should be: if you change  underlying data set, all best are off and you need to preserve the state; we will clear  this field. However, I am not willing to introduce this so late in C development.
+679	No children implies there is no center child for which a baseline can be computed.
+680	Compute the baseline of the center child.
+681	 If the center child has no baseline, neither does this list view.
+682	super.onTouchEvent can change the state of the scroll, keep a copy so that handleTouchUp  can exit early if scrollState != IDLE when the touch event started.
+683	Respond to keycodes (at least originally generated and injected by wrist gestures).
+684	No taps are accepted if this view is disabled.
+685	Special case: if the top third of the screen is empty and the touch event happens  there, we don't want to immediately disallow the parent from using it. We tell  parent to disallow intercept only after we locked a gesture. Before that he  might do something with the action.
+686	If the fling would not be enough to change position, we increase it to satisfy user's  intent of switching current position.
+687	TODO(gruszczy): This could be easily optimized, so that we stop looking when we the  distance starts growing again, instead of finding the closest. It would safe half of  the loop.
+688	We are flinging, so let's not start animations just yet. Instead we will start them  when the fling finishes.
+689	Round up so that the screen is fully occupied by 3 items.
+690	 TODO: Move this to a separate class, so it can't directly interact with the WearableListView.
+691	We need to have another copy of the same method, because this one uses  LayoutManager.getChildCount/getChildAt instead of View.getChildCount/getChildAt and  they return different values.
+692	TODO(gruszczy): This could be easily optimized, so that we stop looking when we the  distance starts growing again, instead of finding the closest. It would safe half of  the loop.
+693	We are performing a relayout after we already had some children, because e.g. the  contents of an adapter has changed. First we want to check, if the central item  from before the layout is still here, because we want to preserve it.
+694	Central item was removed. Let's find the first surviving item and use it  as an anchor.
+695	None of the children survives the relayout, let's just use the top of the  first one.
+696	Some of the children survived the relayout. We will keep it in its place,  but go through previous children and maybe add them.
+697	If we were previously zoomed-in on a single item, ignore this and just  use the default value set above. Reasoning: if we are still zoomed-in,  oldTop will be ignored when laying out the single child element. If we  are no longer zoomed in, then we want to position items using the top  of the single item as if the single item was not zoomed in, which is  equal to the default value.
+698	We need to handle special case where the first, central item was removed  and now the first element is hanging below, instead of being nicely  centered.
+699	We are trying to position elements ourselves, so we force position of the first  one.
+700	Since the content might have changed, we need to adjust the absolute scroll in case  some elements have disappeared or were added.
+701	Disable vertical scrolling when zoomed.
+702	TODO(gruszczy): This code is shit, needs to be rewritten.
+703	TODO: (mindyp): when flinging, return the dydt that triggered the fling.
+704	Snap to center.
+705	Take snapshot of state
+706	Check if there was changed state since we persisted. If so, we need to  persist again.
+707	 Check if we can instantly call back
+708	Return result if requested
+709	Set header icon and title
+710	Store label for dialog
+711	 Show out of space dialog if needed
+712	Get status messages
+713	Set up "done" button
+714	launch manage applications
+715	Reregister for result; might instantly call back if result was delivered while  activity was destroyed
+716	Does not happen
+717	 This is the first onResume in a single life of the activity
+718	we will receive a broadcast when the install is finished
+719	empty
+720	empty
+721	empty
+722	empty, finish is handled by InstallResultReceiver
+723	 This is the first onResume in a single life of the activity
+724	File does not exist, or became invalid
+725	Create file delayed to be able to show error
+726	Despite the comments in ContentResolver#openInputStream the returned stream can  be null.
+727	Be nice and respond to a cancellation
+728	Now start the installation again from a file
+729	If the activity was started via a PackageInstaller session, we retrieve the calling  package from that session
+730	The the installation source as the nextActivity thinks this activity is the source, hence  set the originating UID and sourceInfo explicitly
+731	Copy file to prevent it from being changed underneath this process
+732	Ignore and try the next package
+733	If remote package manager cannot be reached, install will likely fail anyway.
+734	ignore
+735	The originating uid from the intent. We only trust/use this if it comes from either  the document manager app or the downloads provider
+736	Cannot reach ActivityManager. Aborting install.
+737	Ignore. Should not happen.
+738	There seems to be no currently enabled downloads provider on the system.
+739	Return result if requested
+740	Set header icon and title
+741	 Set up "done" button
+742	Enable or disable "launch" button
+743	ApplicationInfo object primarily used for already existing applications
+744	Buttons to indicate user acceptance
+745	Dialog identifiers used in showDialog
+746	If unknown sources are temporary allowed
+747	Would the mOk button be enabled if this activity would be resumed
+748	We might need to show permissions, load layout with permissions
+749	This is an update to an application, but there are no  permissions at all.
+750	This is a new application with no permissions.
+751	We do not need to show any permissions, load layout without permissions
+752	There is nothing to scroll view, so the ok button is immediately  set to install.
+753	The user has just allowed this package to install other packages (via Settings).
+754	Log the fact that the app is requesting an install, and is now allowed to do it  (before this point we could only log that it's requesting an install, but isn't  allowed to do it yet).
+755	Privileged apps can bypass unknown sources check if they want.
+756	 Check if package is already installed. display confirmation dialog if replacing pkg
+757	This is a little convoluted because we want to get all uninstalled  apps, but this may include apps with just data, and if it is just  data we still want to count it as "installed".
+758	 if there's nothing to do, quietly slip into the ether
+759	load dummy layout with OK button disabled until we override this layout in  startInstallConfirm
+760	Don't allow the install button to be clicked as there might be overlays
+761	Check for install apps user restriction first.
+762	Check for unknown sources restriction
+763	 Check for parse errors
+764	Cancel and finish
+765	Start subactivity to actually install the application
+766	launch manage applications
+767	Ignore and try the next package
+768	Unfortunately when TabHost changes the current tab, it kindly  also takes care of putting focus on it when not in touch mode.  The jerk.  This hack tries to prevent this from pulling focus out of our  ViewPager.
+769	Scroll the current tab into visibility if needed.
+770	Make sure the scrollbars are visible for a moment after selection
+771	Never restore any state, esp. never create any fragments. The data in the fragment might  be stale, if e.g. the app was uninstalled while the activity was destroyed.
+772	Cannot reach Package/ActivityManager. Aborting uninstall.
+773	Get intent information.  We expect an intent with URI of the form package:<packageName>#<className>  className is optional; if specified, it is the activity the user chose to uninstall
+774	The class name may have been specified (e.g. when deleting an app from all apps)
+775	We only catch the case when the user in question is neither the  current user nor its profile.
+776	Shouldn't happen.
+777	Show dialog, which is the whole UI
+778	do nothing
+779	The caller will be informed about the result via a callback
+780	The caller will be informed about the result and might decide to display it
+781	This is the rare case that the caller did not ask for the result, but wanted to be  notified via onActivityResult when the installation finishes
+782	If the Activity label differs from the App label, then make sure the user  knows the Activity belongs to the App being uninstalled.
+783	Collect only runtime permissions.
+784	Don't allow toggling non-platform permission groups for legacy apps via app ops.
+785	We toggle permissions only to apps that support runtime  permissions, otherwise we toggle the app op corresponding  to the permission if the permission is granted to the app.
+786	Skip unallowed permissions.
+787	Do not touch permissions fixed by the system.
+788	 Ensure the permission app op enabled before the permission grant.
+789	 Grant the permission if needed.
+790	 Update the permission flags.
+791	Now the apps can ask for the permission as the user  no longer has it fixed in a denied state.
+792	Legacy apps cannot have a not granted permission but just in case.
+793	If the permissions has no corresponding app op, then it is a  third-party one and we do not offer toggling of such permissions.
+794	Legacy apps do not know that they have to retry access to a  resource due to changes in runtime permissions (app ops in this  case). Therefore, we restart them on app op change, so they  can pick up the change.
+795	Mark that the permission should not be be granted on upgrade  when the app begins supporting runtime permissions.
+796	Granting a permission explicitly means the user already  reviewed it so clear the review flag on every grant.
+797	We toggle permissions only to apps that support runtime  permissions, otherwise we toggle the app op corresponding  to the permission if the permission is granted to the app.
+798	Do not touch permissions fixed by the system.
+799	 Revoke the permission if needed.
+800	 Update the permission flags.
+801	Take a note that the user fixed the permission.
+802	Legacy apps cannot have a non-granted permission but just in case.
+803	If the permission has no corresponding app op, then it is a  third-party one and we do not offer toggling of such permissions.
+804	Disabling an app op may put the app in a situation in which it  has a handle to state it shouldn't have, so we have to kill the  app. This matches the revoke runtime permission behavior.
+805	Mark that the permission should not be granted on upgrade  when the app begins supporting runtime permissions.
+806	Unbadged before badged.
+807	We default to not showing system apps, so hide them from count.
+808	We default to not showing system apps, so hide them from count.
+809	Unbadged before badged.
+810	Mare sure we respond to cancellation.
+811	Get the permissions in this group.
+812	 Cache seen permissions and see if group has runtime permissions.
+813	 No runtime permissions - not interesting for us.
+814	Create the group and add to the list.
+815	Make sure we add groups for lone runtime permissions.
+816	We will filter out permissions that no package requests.
+817	If we have handled this permission, no more work to do.
+818	We care only about installed runtime permissions.
+819	 If no app uses this permission,
+820	Create the group and add to the list.
+821	We're being measured wider this time, try un-stacking.
+822	If we're not stacked, make sure the measure spec is AT_MOST rather  than EXACTLY. This ensures that we'll still get TOO_SMALL so that we  know to stack the buttons.
+823	We'll need to remeasure again to fill excess space.
+824	Measure again in the new orientation.
+825	Reverse the child order. This is specific to the Material button  bar's layout XML and will probably not generalize.
+826	Cache this as this can only read on onCreate, not later.
+827	 Don't allow legacy apps to request runtime permissions.
+828	Returning empty arrays means a cancellation.
+829	Skip showing groups that we know cannot be granted.
+830	if the permission is fixed, ensure that we return the right request result
+831	Group has already been approved / denied via the UI by the user
+832	It is not clear which permissions belong to this group, hence never skip this  view
+833	The UI currently displays the first group with  mState == STATE_UNKNOWN. So we are switching to next group until we  could not allow a group that was still unknown
+834	get notified when the package is removed
+835	 check if the package was removed while this activity was not started
+836	We are animating the top view, need to compensate for that in motion events.
+837	Set the permission message as the title so it can be announced.
+838	Set the new grant view  TODO: Use a real message for the action. We need group action APIs
+839	Fallback to system.
+840	We do not allow backing out.
+841	We do not allow backing out.
+842	For <= N_MR1 apps all permissions are affected.
+843	For N_MR1+ apps only the requested permission is affected with addition  to splits of this permission applicable to apps targeting N_MR1.
+844	in automotive mode, there's no system wide back button, so need to add that
+845	We want to keep the content bottom at the same place to avoid movement of the "Allow"  button.  Try to keep the content bottom at the same height. If this would move the dialog out of  the top of the screen move it down as much as possible, then keep it at that position for  the rest of the sequence of permission dialogs.
+846	If we target a group make this look like app permissions.
+847	 If we show a targeted group, then ignore everything else.
+848	 If we show a targeted group, then don't show 'other' permissions.
+849	 Sort an ArrayList of the groups and then set the order from the sorting.
+850	We allow individual permission control for some permissions if review enabled
+851	We are granting a permission from a group but since this is an  individual permission control other permissions in the group may  be revoked, hence we need to mark them user fixed to prevent the  app from requesting a non-granted permission and it being granted  because another permission in the group is granted. This applies  only to apps that support runtime permissions.
+852	If some permissions were not granted then they should be fixed.
+853	If all permissions are granted then they should not be fixed.
+854	If we just revoked the last permission we need to clear  the user fixed state as now the app should be able to  request them at runtime if supported.
+855	 Some groups may be a double target - one to toggle and one to fine manage
+856	 Double toggle is back to initial state.
+857	Animation parameters.
+858	Needed for animation
+859	 If this is a second (or later) permission and the views exist, then animate.
+860	Fade out old description group and scale out the icon for it.
+861	Icon scale to zero
+862	Description fade out
+863	 Checkbox fade out if needed
+864	Prepare new content to the right to be moved in
+865	How much scale for the dialog to appear the same?
+866	How much to translate for the dialog to appear the same?
+867	Animate to the current layout
+868	Description slide in
+869	Checkbox fade in if needed
+870	Remove the old content
+871	Add the new content
+872	Animate the new content
+873	No-op
+874	Use this to speed up getting the info for all of the PermissionApps below.  Create a new one for each refresh to make sure it has fresh data.
+875	Check if we need an additional permissions preference
+876	If double target behavior is enabled do nothing
+877	If existing preference - only update its state.
+878	 Double toggle is back to initial state.
+879	If there is no created view, there is no reason to animate.
+880	Set icon
+881	Set message
+882	Set the permission message as the title so it can be announced.
+883	Color the app name.
+884	 Mutable state
+885	 Sort an ArrayList of the groups and then set the order from the sorting.
+886	TODO: No hardcoded layouts
+887	TODO: No hardcoded layouts
+888	 Double toggle is back to initial state.
+889	Use this to speed up getting the info for all of the PermissionApps below.  Create a new one for each refresh to make sure it has fresh data.
+890	If existing preference - only update its state.
+891	 Double toggle is back to initial state.
+892	Key identifying the preference used on TV as the extra header in a permission fragment.  This is to distinguish it from the rest of the preferences
+893	TV-specific instance variable
+894	If there is no created view, there is no reason to animate.
+895	If setting the permission is disabled, it must have been locked  by the device or profile owner. So get that info and pass it to  the support details dialog.
+896	 Also refresh the UI
+897	If permission is controlled individually, we show all requested permission  inside this group.
+898	 Now add the non-system settings to the end of the list
+899	The UI shows System settings first, then non-system settings
+900	We are granting a permission from a group but since this is an  individual permission control other permissions in the group may  be revoked, hence we need to mark them user fixed to prevent the  app from requesting a non-granted permission and it being granted  because another permission in the group is granted. This applies  only to apps that support runtime permissions.
+901	If some permissions were not granted then they should be fixed.
+902	This is impossible, throw a fatal error in non-user build.
+903	If we just revoked the last permission we need to clear  the user fixed state as now the app should be able to  request them at runtime if supported.
+904	 Double toggle is back to initial state.
+905	 Mutable state
+906	An app just being installed, which means all groups requiring reviews.
+907	When revoking, we set "confirm" as the negative icon to be shown at the bottom.
+908	Set icon
+909	Set message
+910	Color the app name.
+911	The log tag used by SafetyNet to pick entries from the event log.
+912	Log tag for the result of permissions request.
+913	Log tag for the result of permissions toggling.
+914	We currently will not show permissions fixed by the system.  which is what the system does for system components.
+915	We currently will not show permissions fixed by the system  which is what the system does for system components.
+916	If the Activity label differs from the App label, then make sure the user  knows the Activity belongs to the App being uninstalled.
+917	Update the status text
+918	We only catch the case when the user in question is neither the  current user nor its profile.
+919	Shouldn't happen.
+920	 TODO: b/25442806
+921	This currently does not support going through a onDestroy->onCreate cycle. Hence if that  happened, just fail the operation for mysterious reasons.
+922	Make window transparent until initView is called. In many cases we can avoid showing the  UI at all as the app is uninstalled very quickly. If we show the UI and instantly remove  it, it just looks like a flicker.
+923	Couldn't find the package, no need to call uninstall.
+924	We set the window background to translucent in constructor, revert this
+925	Ignore back key when installation is in progress
+926	If installation is done, just set the result code
+927	2b: Stream the asset to the installer. Note:  Note: writeToOutputStreamFromAsset() always safely closes the input stream
+928	2c: close output stream
+929	Ignore otherwise
+930	An error occurred, we're done
+931	3. Commit the session (this actually installs it.)  Session map  will be cleaned up in the callback.
+932	Catch and discard the error
+933	Capture a map of known sessions  This list will be pruned a bit later (stale sessions will be canceled)
+934	 Checking for old info is strictly for logging purposes
+935	0. Generic try/catch block because I am not really sure what exceptions (other than  IOException) might be thrown by PackageInstaller and I want to handle them  at least slightly gracefully.
+936	1. Create or recover a session, and open it  Try recovery first
+937	See if it's openable, or already held open
+938	2. Launch task to handle file operations.
+939	Check for already-open session
+940	Probe the session to ensure that it's still open. This may or may not  throw (if non-open), but it may serve as a canary for stale sessions.
+941	 Try to open it. If we fail here, assume that the SessionInfo was stale.
+942	IOException may be thrown at this point
+943	Close if currently held open
+944	The session no longer exists, so we can exit quietly.
+945	Unfortunately close() is not idempotent. Try our best to make this safe.
+946	Create a single-use broadcast receiver
+947	Create a matching PendingIntent and use it to generate the IntentSender
+948	TODO - use the constant when the correct/final name is in the SDK  TODO This is unexpected, so we are treating as failure for now
+949	This is a hack: because PackageInstaller now reports error codes  with small positive values, we need to remap them into a space  that is more compatible with the existing package manager error codes.  See https:sites.google.com/a/google.com/universal-store/documentation        /android-client/download-error-codes
+950	Redo some of the permission check in {@link ContentProvider}. Just add an extra check to  allow System process to access this provider.
+951	allow System process to access this provider.
+952	last chance, check against any uri grants
+953	Get the Activity Manager Object
+954	Ignore this exception. We could not find the package, will treat as a new  installation.
+955	 Log if the installed pkg has a higher version number.
+956	Starting in Feldspar, we are not going to allow downgrades of any app.
+957	Following the Android Phone model, we should only check for permissions for any  newly defined perms.
+958	If the permission is granted, then we will not ask to request it again.
+959	Check that the wearable has all the features.
+960	Check permissions on both the new wearable package and also on the already installed  wearable package.  If the app is targeting API level 23, we will also start a service in ClockworkHome  which will ultimately prompt the user to accept/reject permissions.
+961	Finally install the package.
+962	Some error happened. If the message has been sent, we can wait for the observer  which will finish the service.
+963	TODO: This was left using the old PackageManager API due to the fact that this code is being        deprecated and that we need the bare minimum to continue working moving forward        If this code is used as reference, this logic should be reworked to use the new        PackageInstaller APIs similar to how installPackage was reworked
+964	Found package, send uninstall request.
+965	Couldn't find the package, no need to call uninstall.
+966	Assumption: We are running on Android O.  If the Phone App is targeting M, all permissions may not have been granted to the phone  app. If the Wear App is then not targeting M, there may be permissions that are not  granted on the Phone app (by the user) right now and we cannot just grant it for the Wear  app.
+967	Install the app if Wear App is ready for the new perms model.
+968	All permissions requested by the watch are already granted on the phone, no need  to do anything.
+969	 Log an error if Wear is targeting < 23 and phone is targeting >= 23.
+970	Make sure that the MatrixCursor returned by the ContentProvider has 2 columns and  verify their types.
+971	This is an error condition. This means that the wearable has permissions that  are not even declared in its host app. This is a developer error.
+972	Delete tempFile from the file system.
+973	Update notification since we have a label now.
+974	Batch all insertions in a single transaction to improve efficiency.
+975	When a constraint violation occurs, the row that contains the violation  is not inserted. But the command continues executing normally.
+976	Notify listener of DB change
+977	 if attribute at index is empty, move forward to the next attribute
+978	 compare version
+979	Parse the subId
+980	 Handle DEFAULT_SUBSCRIPTION_ID
+981	Remove absent subId from the currentSubscriptionMap.
+982	Parse the subId, using the default subId if subId is not provided
+983	 Handle DEFAULT_SUBSCRIPTION_ID
+984	Return an empty cursor if subId is not belonging to current subscriptions.
+985	Context to access resources with
+986	set up the database schema  1 MCC may has more IDDs
+987	do nothing
+988	Read internal data from xml
+989	when we do query, we will join it with MccLookup table
+990	The name of parts directory. The full dir is "app_parts".
+991	First check if a restricted view of the "pdu" table should be used based on the  caller's identity. Only system, phone or the default sms app can have full access  of mms data. For other apps, we present a restricted view which only contains sent  or received messages, without wap pushes.
+992	Generate the body of the query.
+993	TODO: Does this need to be a URI for this provider.
+994	default to inbox
+995	Filter keys we don't support yet.
+996	TODO: Should initialValues be validated, e.g. if it  missed some significant keys?
+997	Mark all non-inbox messages read.
+998	thread_id
+999	Only SYSTEM or PHONE can set CREATOR  If caller is not SYSTEM or PHONE, or SYSTEM or PHONE does not set CREATOR  set CREATOR using the truth on caller.  Note: Inferring package name from UID may include unrelated package names
+1000	 Notify change when an MMS is received.
+1001	text/plain and app application/smil store their "data" inline in the  table so there's no need to create the file
+1002	The _data column is filled internally in MmsProvider or from the  TelephonyBackupAgent, so this check is just to avoid it from being  inadvertently set. This is not supposed to be a protection against malicious  attack, since sql injection could still be attempted to bypass the check.  On the other hand, the MmsProvider does verify that the _data column has an  allowed value before opening any uri/files.
+1003	Use the filename if possible, otherwise use the current time as the name.
+1004	Generate the '_data' field of the part with default  permission settings.
+1005	Adds the .fl extension to the filename if contentType is  "application/vnd.oma.drm.message"
+1006	Don't use a trigger for updating the words table because of a bug  in FTS3.  The bug is such that the call to get the last inserted  row is incorrect.
+1007	Update the words table with a corresponding row.  The words table  allows us to search for words quickly, without scanning the whole  table;
+1008	we're using the row id of the part table row but we're also using ids  from the sms table so this divides the space into two large chunks.  The row ids from the part table start at 2 << 32.
+1009	FIXME: This might be an error, ignore it may cause  unpredictable result.
+1010	Delete the associated files saved on file-system.
+1011	The _data column is filled internally in MmsProvider, so this check is just to avoid  it from being inadvertently set. This is not supposed to be a protection against  malicious attack, since sql injection could still be attempted to bypass the check. On  the other hand, the MmsProvider does verify that the _data column has an allowed value  before opening any uri/files.
+1012	Filter keys that we don't support yet.
+1013	CREATOR should not be changed by non-SYSTEM/PHONE apps
+1014	If there is not exactly one result, throw an appropriate  exception.
+1015	The MmsProvider shouldn't open a file that isn't MMS data, so we verify that the  _data path actually points to MMS data. That safeguards ourselves from callers who  inserted or updated a URI (more specifically the _data column) with disallowed paths.  TODO(afurtado): provide a more robust mechanism to avoid disallowed _data paths to  be inserted/updated in the first place, including via SQL injection.
+1016	Some columns are unsupported.  They should therefore  neither be inserted nor updated.  Filter them out.
+1017	Keys shouldn't be inserted or updated.
+1018	When looking in the pdu table for unread messages, only count messages that  are displayed to the user. The constants are defined in PduHeaders and could be used  here, but the string "(m_type=132 OR m_type=130 OR m_type=128)" is used throughout this  file and so it is used here to be consistent.      m_type=128   = MESSAGE_TYPE_SEND_REQ      m_type=130   = MESSAGE_TYPE_NOTIFICATION_IND      m_type=132   = MESSAGE_TYPE_RETRIEVE_CONF
+1019	When a part is inserted, if it is not text/plain or application/smil  (which both can exist with text-only MMSes), then there is an attachment.  Set has_attachment=1 in the threads table for the thread in question.
+1020	When the 'mid' column in the part table is updated, we need to run the trigger to update  the threads table's has_attachment column, if the part is an attachment.
+1021	When a part is deleted (with the same non-text/SMIL constraint as when  we set has_attachment), update the threads table for all threads.  Unfortunately we cannot update only the thread that the part was  attached to, as it is possible that the part has been orphaned and  the message it was attached to is already gone.
+1022	When the 'thread_id' column in the pdu table is updated, we need to run the trigger to update  the threads table's has_attachment column, if the message has an attachment in 'part' table
+1023	SharedPref key used to check if initial create has been done (if onCreate has already been  called once)
+1024	TODO(sahinc): Turn this to true once the schema finalizes, so that people can update their  messaging databases. NOTE: move the switch/case update to the latest version of the database  before turning this flag to true.
+1025	ignore
+1026	Broadcast ACTION_SMS_MMS_DB_LOST
+1027	no threads, delete all addresses
+1028	Find all the referenced recipient_ids from the threads. recipientIds is  a space-separated list of recipient ids: "1 14 21"
+1029	Delete rows in the threads table if  there are no more messages attached to it in either  the sms or pdu tables.  Note that we do this regardless of whether they match 'where'.
+1030	If this deleted a row, let's remove orphaned canonical_addresses
+1031	Update the message count in the threads table as the sum  of all messages in both the sms and pdu tables.
+1032	Update the date and the snippet (and its character set) in  the threads table to be that of the most recent message in  the thread.
+1033	Update the error column of the thread to indicate if there  are any messages in it that have failed to send.  First check to see if there are any messages with errors in this thread.
+1034	 Find the thread ID that the specified SMS belongs to.
+1035	Delete the specified message.
+1036	Update its thread.
+1037	this onCreate is called after onCreate was called once initially. The db file  disappeared mysteriously?
+1038	When upgrading the database we need to populate the words  table with the rows out of sms and part.
+1039	monitor the sms table  NOTE don't handle inserts using a trigger because it has an unwanted  side effect:  the value returned for the last row ends up being the  id of one of the trigger insert not the original row insert.  Handle inserts manually in the provider.
+1040	N.B.: Whenever the columns here are changed, the columns in  {@ref MmsSmsProvider} must be changed to match.
+1041	Restricted view of pdu table, only sent/received messages without wap pushes
+1042	Unlike the other trigger-creating functions, this function can be called multiple times  without harm.
+1043	Cleans up parts when a MM is deleted.
+1044	Cleans up address info when a MM is deleted.
+1045	Delete obsolete delivery-report, read-report while deleting their  associated Send.req.
+1046	Delete pending status for a message when it is deleted.
+1047	When a message is moved out of Outbox, delete its pending status.
+1048	Insert pending status for M-Notification.ind or M-ReadRec.ind  when they are inserted into Inbox/Outbox.
+1049	Insert pending status for M-Send.req when it is moved into Outbox.
+1050	monitor the mms table
+1051	Updates threads table whenever a message in pdu is updated.
+1052	Update threads table whenever a message in pdu is deleted
+1053	Updates threads table whenever a message is added to pdu.
+1054	Updates threads table whenever a message in pdu is updated.
+1055	Update the error flag of threads when delete pending message.
+1056	Update the error flag of threads while moving an MM out of Outbox,  which was failed to be sent permanently.
+1057	 email address if from an email gateway, otherwise same as address
+1058	N.B.: Whenever the columns here are changed, the columns in  {@ref MmsSmsProvider} must be changed to match.
+1059	Restricted view of sms table, only sent/received messages
+1060	TODO Ensure that each entry is removed when the last use of  any address equivalent to its address is removed.
+1061	 TODO Check the query plans for these triggers.
+1062	Updates threads table whenever a message is added to sms.
+1063	Updates threads table whenever a message in sms is updated.
+1064	Updates threads table whenever a message in sms is updated.
+1065	As of DATABASE_VERSION 55, we've removed these triggers that delete empty threads.  These triggers interfere with saving drafts on brand new threads. Instead of  triggers cleaning up empty threads, the empty threads should be cleaned up by  an explicit call to delete with Threads.OBSOLETE_THREADS_URI.
+1066	When the last message in a thread is deleted, these          triggers ensure that the entry for its thread ID is removed          from the threads table.         db.execSQL("CREATE TRIGGER delete_obsolete_threads_pdu " +                    "AFTER DELETE ON pdu " +                    "BEGIN " +                    "  DELETE FROM threads " +                    "  WHERE " +                    "    _id = old.thread_id " +                    "    AND _id NOT IN " +                    "    (SELECT thread_id FROM sms " +                    "     UNION SELECT thread_id from pdu); " +                    "END;");          db.execSQL("CREATE TRIGGER delete_obsolete_threads_when_update_pdu " +                    "AFTER UPDATE OF " + Mms.THREAD_ID + " ON pdu " +                    "WHEN old." + Mms.THREAD_ID + " != new." + Mms.THREAD_ID + " " +                    "BEGIN " +                    "  DELETE FROM threads " +                    "  WHERE " +                    "    _id = old.thread_id " +                    "    AND _id NOT IN " +                    "    (SELECT thread_id FROM sms " +                    "     UNION SELECT thread_id from pdu); " +                    "END;");
+1067	TODO Add triggers for SMS retry-status management.
+1068	Update the error flag of threads when the error type of  a pending MM is updated.
+1069	Update the error flag of threads after a text message was  failed to send/receive.
+1070	upgrade to 63: just add a happy little index.
+1071	Clean the database out in order to start over from scratch.  We don't need to drop our triggers here because SQLite automatically  drops a trigger when its attached database is dropped.
+1072	Add 'has_attachment' column to threads table.
+1073	Add insert and delete triggers for keeping it up to date.
+1074	add the update trigger for keeping the threads up to date.
+1075	Add 'locked' column to sms table.
+1076	Add 'locked' column to pdu table.
+1077	add the "text" column for caching inline text (e.g. strings) instead of  putting them in an external file
+1078	This code is imperfect in that we can't guarantee that all the  backing files get deleted.  For example if the system aborts after  the database is updated but before we complete the process of  deleting files.
+1079	TODO Auto-generated catch block
+1080	add the update trigger for keeping the threads up to date.
+1081	Add 'error_code' column to sms table.
+1082	update the existing sms and pdu tables so the new "seen" column is the same as  the "read" column for each row.
+1083	Updates threads table whenever a message in pdu is updated.
+1084	Add 'date_sent' column to sms table.
+1085	Add 'date_sent' column to pdu table.
+1086	Drop removed triggers
+1087	Add 'text_only' column to pdu table.
+1088	Clear out bad rows, those with empty threadIds, from the pdu table.
+1089	When a non-FBE device is upgraded to N, all MMS attachment files are moved from  /data/data to /data/user_de. We need to update the paths stored in the parts table to  reflect this change.
+1090	The old path of the part files will be something like this:    /data/data/0/com.android.providers.telephony/app_parts  The new path of the part files will be something like this:    /data/user_de/0/com.android.providers.telephony/app_parts
+1091	aosp and internal code diverged at version 63. Aosp did createThreadIdDateIndex() on  upgrading to 63, whereas internal (nyc) added column 'deleted'. A device upgrading from  nyc will have columns deleted and message_body in raw table with version 64, but not  createThreadIdDateIndex()
+1092	getReadableDatabase gets or creates a database. So we know for sure that a database has  already been created at this point.
+1093	getWritableDatabase gets or creates a database. So we know for sure that a database has  already been created at this point.
+1094	We've already updated the database. This receiver is no longer necessary.
+1095	We failed, perhaps because of low storage. Turn on a receiver to watch for  storage space.
+1096	 Determine whether a particular table has AUTOINCREMENT in its schema.
+1097	upgradeThreadsTableToAutoIncrement() is called to add the AUTOINCREMENT keyword to  the threads table. This could fail if the user has a lot of conversations and not enough  storage to make a copy of the threads table. That's ok. This upgrade is optional. It'll  be called again next time the device is rebooted.
+1098	Make the _id of the threads table autoincrement so we never re-use thread ids  Have to create a new temp threads table. Copy all the info from the old table.  Drop the old table and rename the new table to that of the old.
+1099	upgradeAddressTableToAutoIncrement() is called to add the AUTOINCREMENT keyword to  the canonical_addresses table. This could fail if the user has a lot of people they've  messaged with and not enough storage to make a copy of the canonical_addresses table.  That's ok. This upgrade is optional. It'll be called again next time the device is rebooted.
+1100	Make the _id of the canonical_addresses table autoincrement so we never re-use ids  Have to create a new temp canonical_addresses table. Copy all the info from the old  table. Drop the old table and rename the new table to that of the old.
+1101	upgradePartTableToAutoIncrement() is called to add the AUTOINCREMENT keyword to  the part table. This could fail if the user has a lot of sound/video/picture attachments  and not enough storage to make a copy of the part table.  That's ok. This upgrade is optional. It'll be called again next time the device is rebooted.
+1102	Make the _id of the part table autoincrement so we never re-use ids  Have to create a new temp part table. Copy all the info from the old  table. Drop the old table and rename the new table to that of the old.
+1103	part-related triggers get tossed when the part table is dropped -- rebuild them.
+1104	upgradePduTableToAutoIncrement() is called to add the AUTOINCREMENT keyword to  the pdu table. This could fail if the user has a lot of mms messages  and not enough storage to make a copy of the pdu table.  That's ok. This upgrade is optional. It'll be called again next time the device is rebooted.
+1105	Make the _id of the part table autoincrement so we never re-use ids  Have to create a new temp part table. Copy all the info from the old  table. Drop the old table and rename the new table to that of the old.
+1106	pdu-related triggers get tossed when the part table is dropped -- rebuild them.
+1107	Set the values of that column correctly based on the current  contents of the database.
+1108	These constants are used to construct union queries across the  MMS and SMS base tables.
+1109	These are the columns that appear in both the MMS ("pdu") and  SMS ("sms") message tables.
+1110	These are the columns that appear only in the MMS message  table.
+1111	These are the columns that appear only in the SMS message  table.
+1112	 These are all the columns that appear in the "threads" table.
+1113	These are all the columns that appear in the MMS and SMS  message tables.
+1114	These are all the columns that appear in the MMS table.
+1115	These are all the columns that appear in the SMS table.
+1116	Search on the words table but return the rows from the corresponding sms table
+1117	Search on the words table but return the rows from the corresponding parts table
+1118	This code queries the sms and mms tables and returns a unified result set  of text matches.  We query the sms table which is pretty simple.  We also  query the pdu, part and addr table to get the mms result.  Note we're  using a UNION so we have to have the same number of result columns from  both queries.
+1119	In these patterns, "#" is the thread ID.
+1120	URI for deleting obsolete threads.
+1121	In this pattern, two query parameter names are expected:  "subject" and "recipient."  Multiple "recipient" parameters  may be present.
+1122	Use this pattern to query the canonical address by given ID.
+1123	Use this pattern to query all canonical addresses.
+1124	In this pattern, two query parameters may be supplied:  "protocol" and "message." For example:    content:mms-sms/pending?        -> Return all pending messages;    content:mms-sms/pending?protocol=sms        -> Only return pending SMs;    content:mms-sms/pending?protocol=mms&message=1        -> Return the the pending MM which ID equals '1'.
+1125	Use this pattern to get a list of undelivered messages.
+1126	Use this pattern to see what delivery status reports (for  both MMS and SMS) have not been delivered to the user.
+1127	First check if restricted views of the "sms" and "pdu" tables should be used based on the  caller's identity. Only system, phone or the default sms app can have full access  of sms/mms data. For other apps, we present a restricted view which only contains sent  or received messages, without wap pushes.
+1128	find the words which match the pattern using the snippet function.  The  snippet function parameters mainly describe how to format the result.  See http:www.sqlite.org/fts3.html#section_4_2 for details.
+1129	Given a message ID and an indicator for SMS vs. MMS return  the thread id of the corresponding thread.
+1130	ignore... return empty cursor
+1131	We lowercase all email addresses, but not addresses that aren't numbers, because  that would incorrectly turn an address such as "My Vodafone" into "my vodafone"  and the thread title would be incorrect when displayed in the UI.
+1132	optimize for size==1, which should be most of the cases
+1133	Find the thread with the given recipients
+1134	No thread with those recipients exists, so create the thread.
+1135	The thread was just created, now find it and return it.
+1136	NOTE: buildUnionSubQuery *ignores* selectionArgs
+1137	Only allow update archived
+1138	CREATOR should not be changed by non-SYSTEM/PHONE apps
+1139	Dump default SMS app
+1140	TODO - implement
+1141	see if the address already exists  TODO(sahinc) - refine this to match phone number formats in canonical addresses, or find  TODO(sahinc) - another solution.
+1142	 If there is no existing canonical address, add one.
+1143	Parse the subId
+1144	 handle DEFAULT_SUBSCRIPTION_ID
+1145	create the new service state
+1146	notify listeners  if ss is null (e.g. first service state update) we will notify for all fields
+1147	store the new service state
+1148	Parse the subId
+1149	 handle DEFAULT_SUBSCRIPTION_ID
+1150	Get the service state
+1151	Build the result
+1152	 for every field, if the field has changed values, notify via the provider
+1153	if the voice or data registration or roaming state field has changed values, notify via  the provider.  If oldSS is null and newSS is not (e.g. first update of service state) this will also  notify
+1154	N.B.: These columns must appear in the same order as the  calls to add appear in convertIccToSms. "service_center_address",        getServiceCenterAddress "address",                       getDisplayOriginatingAddress "message_class",                 getMessageClass "body",                          getDisplayMessageBody "date",                          getTimestampMillis "status",                        getStatusOnIcc "index_on_icc",                  getIndexOnIcc "is_status_report",              isStatusReportMessage "transport_type",                Always "sms". "type",                          Always MESSAGE_TYPE_ALL. "locked",                        Always 0 (false). "error_code",                    Always 0
+1155	First check if a restricted view of the "sms" table should be used based on the  caller's identity. Only system, phone or the default sms app can have full access  of sms data. For other apps, we present a restricted view which only contains sent  or received messages.
+1156	Generate the body of the query.
+1157	TODO: Since the URLs are a mess, always use content:sms
+1158	Raw table is stored on de database. Other tables are stored in ce database.
+1159	N.B.: These calls must appear in the same order as the  columns appear in ICC_COLUMNS.
+1160	use phone app permissions to avoid UID mismatch in AppOpsManager.noteOp() call
+1161	 TODO: What about "threadID"?
+1162	The raw table is used by the telephony layer for storing an sms before  sending out a notification that an sms has arrived. We don't want to notify  the default sms app of changes to this table.
+1163	The raw table is used by the telephony layer for storing an sms before  sending out a notification that an sms has arrived. We don't want to notify  the default sms app of changes to this table.
+1164	default to inbox
+1165	 Make sure that the date and type are set
+1166	thread_id
+1167	If this message is going in as a draft, it should replace any  other draft messages in the thread.  Just delete all draft  messages with this thread ID.  We could add an OR REPLACE to  the insert below, but we'd have to query to find the old _id  to produce a conflict anyway.
+1168	Look up the person if not already filled in.
+1169	Mark all non-inbox messages read.
+1170	Only SYSTEM or PHONE can set CREATOR  If caller is not SYSTEM or PHONE, or SYSTEM or PHONE does not set CREATOR  set CREATOR using the truth on caller.  Note: Inferring package name from UID may include unrelated package names
+1171	Don't use a trigger for updating the words table because of a bug  in FTS3.  The bug is such that the call to get the last inserted  row is incorrect.
+1172	Update the words table with a corresponding row.  The words table  allows us to search for words quickly, without scanning the whole  table;
+1173	Don't update threads unless something changed.
+1174	delete the messages from the sms table
+1175	CREATOR should not be changed by non-SYSTEM/PHONE apps
+1176	Db open helper for tables stored in CE(Credential Encrypted) storage.
+1177	Copied from packages/apps/Messaging/src/com/android/messaging/sms/MmsUtils.java. private static final int DEFAULT_DURATION = 5000; ms
+1178	Copied from packages/apps/Messaging/src/com/android/messaging/sms/MmsUtils.java.
+1179	Copied from packages/apps/Messaging/src/com/android/messaging/sms/MmsUtils.java.
+1180	JSON key for phone number a message was sent from or received to.
+1181	File names suffixes for backup/restore.
+1182	File name formats for backup. It looks like 000000_sms_backup, 000001_sms_backup, etc.
+1183	Charset being used for reading/writing backup files.
+1184	Order by ID entries from database.
+1185	Order by Date entries from database. We start backup from the oldest.
+1186	This is a hard coded string rather than a localized one because we don't want it to  change when you change locale.
+1187	Thread id for UNKNOWN_SENDER.
+1188	Columns from SMS database for backup/restore.
+1189	 Columns to fetch recepients of SMS.
+1190	Columns from MMS database for backup/restore.
+1191	Columns from addr database for backup/restore. This database is used for fetching addresses  for MMS message.
+1192	Columns from part database for backup/restore. This database is used for fetching body text  and charset for MMS message.
+1193	Buffer size for Json writer. public static final int WRITER_BUFFER_SIZE = 32*1024; 32Kb
+1194	We increase how many bytes backup size over quota by 10%, so we will fit into quota on next  backup
+1195	Maximum messages for one backup file. After reaching the limit the agent backs up the file,  deletes it and creates a new one with the same name.  Not final for the testing.
+1196	Default values for SMS, MMS, Addresses restore.
+1197	Shared preferences for the backup agent.
+1198	Consider restored messages read and seen by default. The actual data can override  these values.
+1199	Cache list of recipients by threadId. It reduces db requests heavily. Used during backup.
+1200	It backs up messages from the oldest to newest. First it looks at the timestamp of  the next SMS messages and MMS message. If the SMS is older it backs up 1000 SMS  messages, otherwise 1000 MMS messages. Repeat until out of SMS's or MMS's.  It ensures backups are incremental.
+1201	Increase backup size by the size we skipped during previous backup.
+1202	Either IOException or RuntimeException.
+1203	Tell the default sms app to do a full sync now that the messages have been  restored.
+1204	 We backup any message that contains text, but only backup the text part.
+1205	Subject charset.
+1206	Set default charset for subject.
+1207	Insert the attachment parts.
+1208	Insert mms.
+1209	 Mostly copied from packages/apps/Messaging/src/com/android/messaging/sms/MmsUtils.java.
+1210	Copied from packages/apps/Messaging/src/com/android/messaging/sms/MmsUtils.java.  NOTE: There are phones on which you can't get the recipients from the thread id for SMS  until you have a message in the conversation!
+1211	recipientIds will be a space-separated list of ids into the  canonical addresses table.
+1212	 Copied from packages/apps/Messaging/src/com/android/messaging/sms/MmsUtils.java.
+1213	TODO: build a single query where we get all the addresses at once.
+1214	Empty because is not used during full backup.
+1215	Empty because is not used during full restore.
+1216	Columns not included in UNIQUE constraint: name, current, edited, user, server, password,  authtype, type, protocol, roaming_protocol, sub_id, modem_cognitive, max_conns,  wait_time, max_conns_time, mtu, bearer_bitmask, user_visible, network_type_bitmask
+1217	SQLite databases store bools as ints but the ContentValues objects passed in through  queries use bools. As a result there is some special handling of boolean fields within  the TelephonyProvider.
+1218	Only called by DevicePolicyManager to manipulate DPC records.
+1219	Only Called by DevicePolicyManager to enforce DPC records.
+1220	Context to access resources with
+1221	 if CarrierSettings app is installed, we expect it to do the initializiation instead
+1222	Try to access the table and create it if "no such table"
+1223	Set up the database schema
+1224	The RRO may have been updated in a firmware upgrade. Add checksum for the  resources to the total checksum so that apns in an RRO update is not missed.
+1225	Environment.getRootDirectory() is a fancy way of saying ANDROID_ROOT or "/system".
+1226	Read external APNS data (partner-provided)
+1227	Sanity check. Force internal version and confidential versions to agree
+1228	It's ok if the file isn't found. It means there isn't a confidential file  Log.e(TAG, "File not found: '" + confFile.getAbsolutePath() + "'");
+1229	Get rid of user/carrier deleted entries that are not present in apn xml file.  Those entries have edited value USER_DELETED/CARRIER_DELETED.
+1230	Delete USER_DELETED
+1231	Change USER_DELETED_BUT_PRESENT_IN_XML to USER_DELETED
+1232	Change CARRIER_DELETED_BUT_PRESENT_IN_XML to CARRIER_DELETED
+1233	do nothing
+1234	Update the stored checksum
+1235	5 << 16 is the Database version and 6 in the xml version.
+1236	This change adds a new authtype column to the database.  The auth type column can have 4 values: 0 (None), 1 (PAP), 2 (CHAP)  3 (PAP or CHAP). To avoid breaking compatibility, with already working  APNs, the unset value (-1) will be used. If the value is -1.  the authentication will default to 0 (if no user / password) is specified  or to 3. Currently, there have been no reported problems with  pre-configured APNs and hence it is set to -1 for them. Similarly,  if the user, has added a new APN, we set the authentication type  to -1.
+1237	Add protcol fields to the APN. The XML file does not change.
+1238	Add carrier_enabled, bearer fields to the APN. The XML file does not change.
+1239	Add mvno_type, mvno_match_data fields to the APN.  The XML file does not change.
+1240	Try to update the siminfo table. It might not be there.
+1241	Try to update the siminfo table. It might not be there.
+1242	Do nothing. This is to avoid recreating table twice. Table is anyway recreated  for next version and that takes care of updates for this version as well.  This version added a new column user_edited to carriers db.
+1243	Most devices should be upgrading from version 13. On upgrade new db will be  populated from the xml included in OTA but user and carrier edited/added entries  need to be preserved. This new version also adds new columns EDITED and  BEARER_BITMASK to the table. Upgrade steps from version 13 are:  1. preserve user and carrier added/edited APNs (by comparing against  old-apns-conf.xml included in OTA) - done in preserveUserAndCarrierApns()  2. add new columns EDITED and BEARER_BITMASK (create a new table for that) - done  in createCarriersTable()  3. copy over preserved APNs from old table to new table - done in  copyPreservedApnsToNewTable()  The only exception if upgrading from version 14 is that EDITED field is already  present (but is called USER_EDITED)
+1244	Compare db with old apns xml file so that any user or carrier edited/added  entries can be preserved across upgrade
+1245	Try to update the siminfo table. It might not be there.  These columns may already be present in which case execSQL will throw an  exception
+1246	Try to update the siminfo table. It might not be there.
+1247	Do nothing. This is to avoid recreating table twice. Table is anyway recreated  for version 24 and that takes care of updates for this version as well.  This version added more fields protocol and roaming protocol to the primary key.
+1248	Try to update the siminfo table. It might not be there.
+1249	Try to update the carriers table. It might not be there.
+1250	This is possible if the column already exists which may be the case if the  table was just created as part of upgrade to version 19
+1251	Try to update the siminfo table. It might not be there.
+1252	Add a new column SubscriptionManager.CARD_ID into the database and set the value  to be the same as the existing column SubscriptionManager.ICC_ID. In order to do  this, we need to first make a copy of the existing SIMINFO_TABLE, set the value  of the new column SubscriptionManager.CARD_ID, and replace the SIMINFO_TABLE with  the new table.
+1253	Add a new column Carriers.APN_SET_ID into the database and set the value to  Carriers.NO_SET_SET by default.
+1254	Add the new MCC_STRING and MNC_STRING columns into the subscription table,  and attempt to populate them.
+1255	Try to update the siminfo table. It might not be there.
+1256	 Migrate the old integer values over to strings
+1257	Try to update the siminfo table. It might not be there.
+1258	Add a new column Telephony.CARRIER_ID into the database and add UNIQUE  constraint into table. However, sqlite cannot add constraints to an existing  table, so recreate the table.
+1259	Try to update the siminfo table. It might not be there.
+1260	Try to update the siminfo table. It might not be there.
+1261	Try to update the siminfo table. It might not be there.
+1262	Try to update the siminfo table. It might not be there.
+1263	Sort in ascending order by subscription id to make sure the rows do not get flipped  during the query and added in the new sim info table in another order (sub id is  stored in settings between migrations).
+1264	Move entries from SIMINFO_TABLE to SIMINFO_TABLE_TMP
+1265	String vals
+1266	bool/int vals
+1267	Blob vals
+1268	Upgrade steps are:  1. Create a temp table- done in createCarriersTable()  2. copy over APNs from old table to new table - done in copyDataToTmpTable()  3. Drop the existing table.  4. Copy over the tmp table.
+1269	This function is called only when upgrading db to version 15. Details about the  upgrade are mentioned in onUpgrade(). This file missing means user/carrier added  APNs cannot be preserved. Log an error message so that OEMs know they need to  include old apns file for comparison.
+1270	do nothing
+1271	Move entries from CARRIERS_TABLE to CARRIERS_TABLE_TMP
+1272	Sync bearer bitmask and network type bitmask
+1273	Include only non-null values in cv so that null values can be replaced  with default if there's a default value for the field
+1274	String vals
+1275	bool/int vals
+1276	String vals
+1277	bool/int vals
+1278	Move entries from CARRIERS_TABLE to CARRIERS_TABLE_TMP
+1279	New EDITED column. Default value (UNEDITED) will  be used for all rows except for non-mvno entries for plmns indicated  by resource: those will be set to CARRIER_EDITED to preserve  their current values
+1280	do nothing
+1281	do not add NULL to the map so that default values can be inserted in db
+1282	Remove spaces before putting it in the map.
+1283	Update the row
+1284	USER_DELETED_BUT_PRESENT_IN_XML indicates entry has been deleted  by user but present in apn xml file.
+1285	CARRIER_DELETED_BUT_PRESENT_IN_XML indicates entry has been deleted  by user but present in apn xml file.
+1286	Merge the types
+1287	If separate rows are needed, do not need to merge any further
+1288	Merge the 2 types
+1289	Do not overwrite a carrier or user edit with EDITED=UNEDITED
+1290	If this APN falls under persist_apns_for_plmn, and the  only difference between old type and new type is that one has dun, and  the APNs have profile_id 0 or not set, then set the profile_id to 1 for  the dun APN/remove dun from type. This will ensure both oldRow and newRow exist  separately in db.
+1291	 Check if APN falls under persist_apns_for_plmn
+1292	APN falls under persist_apns_for_plmn  Check if only difference between old type and new type is that  one has dun
+1293	Only difference between old type and new type is that  one has dun  Check if profile_id is 0/not set
+1294	Update oldRow to remove dun from its type field
+1295	If match was found, both oldRow and newRow need to exist  separately in db. Add newRow to db.
+1296	Conflict is possible only when numeric, mcc, mnc (fields without any default value)  are set in the new row
+1297	for boolean fields we overwrite the strings "true" and "false" with "1"  and "0"
+1298	we use the unsynchronized insert because this function is called  within the syncrhonized function delete()
+1299	Call getReadableDatabase() to make sure onUpgrade is called
+1300	Update APN db on build update
+1301	Check if build id has changed
+1302	Get rid of old preferred apn shared preferences
+1303	Update APN DB
+1304	If id is not invalid, and saveApn is true, save the actual APN in PREF_FILE_FULL_APN  too.
+1305	Before deleting, save actual preferred apns (not the ids) in a separate SP.  NOTE: This code to call setPreferredApn() can be removed since the function is now called  from setPreferredApnId(). However older builds (pre oc-mr1) do not have that change, so  when devices upgrade from those builds and this function is called, this code is needed  otherwise the preferred APN will be lost.
+1306	extract subId from key by removing COLUMN_APN_ID
+1307	 store values of all unique fields to SP
+1308	 intentional fall through from above case
+1309	intentional fall through from above case
+1310	 intentional fall through from above case
+1311	intentional fall through from above case
+1312	If enforced, return DPC records only.
+1313	Otherwise return non-DPC records only.
+1314	intentional fall through from above case
+1315	intentional fall through from above case
+1316	If enforced, return DPC records only.
+1317	Otherwise return non-DPC records only.
+1318	 appendWhere doesn't add ANDs so we do it ourselves
+1319	Exclude entries marked deleted
+1320	noop
+1321	null returns all columns, so need permission check
+1322	For query db one time, append step 1 and step 2 condition in one selection and  separate results after the query is completed. Because IMSI has special match rule,  so just query the MCC / MNC and filter the MVNO by ourselves
+1323	Separate the result into MatrixCursor
+1324	1. APN query result based on legacy SIM MCC/MCC and MVNO
+1325	2. APN query result based on SIM MCC/MNC
+1326	Abort on conflict of unique fields and attempt merge
+1327	zero out the previous operator
+1328	Owned_by should be DPC if inserted via URL_DPC.
+1329	Delete preferred APN for all subIds
+1330	Delete user/carrier edited entries
+1331	Delete user/carrier edited entries
+1332	Delete user/carrier edited entries
+1333	Otherwise mark as user deleted instead of deleting
+1334	Only delete if owned by DPC.
+1335	Replace on conflict so that if same APN is present in db with edited  as UNEDITED or USER/CARRIER_DELETED, it is replaced with  edited USER/CARRIER_EDITED
+1336	Update failed which could be due to a conflict. Check if that is  the case and merge the entries
+1337	 notify observers on specific user settings changes.
+1338	delete preferred apn ids and preferred apns (both stored in diff SharedPref) for all  subIds
+1339	Delete preferred APN for all subIds
+1340	 Delete entries in db
+1341	Notify listeners of DB change since DB has been updated
+1342	Add given carrierIdProvider to mResolver, so that mResolver can send queries  to the provider.
+1343	insert same row twice to break uniqueness constraint
+1344	insert a row with null mnccmnc to break not null constraint
+1345	insert a MVNO
+1346	query based on mccmnc & gid1 & iccid_prefix
+1347	update carrier id for subId 1
+1348	 query carrier id for subId 1
+1349	query carrier id for subId 2
+1350	 query without subId, expect return carrier id of the default subId
+1351	 close mDbHelper database object
+1352	Add context to given carrierIdProvider
+1353	set up the Carrier id table
+1354	Add context to given telephonyProvider
+1355	Add given telephonyProvider to mResolver, so that mResolver can send queries  to the provider.
+1356	Gives permission to write to the APN table within the MockContext
+1357	 close mDbHelper database object
+1358	set up the Carrier key table
+1359	TODO(sahinc): This test isn't that useful for now as it only checks the return value. Revisit  once we have more of the implementation in place.
+1360	insert two threads
+1361	verify two threads are inserted
+1362	Add authority="rcs" to given smsProvider
+1363	no-op
+1364	 Mock out the actual phone state
+1365	Verify that when calling query with no subId in the uri the default ServiceState is  returned.  In this case the subId is set to 0 and the expected service state is  testServiceState.
+1366	Verify that when calling with the DEFAULT_SUBSCRIPTION_ID the correct ServiceState is  returned  In this case the subId is set to 0 and the expected service state is  testServiceState.
+1367	Verify that when calling with a specific subId the correct ServiceState is returned  In this case the subId is set to 1 and the expected service state is  testServiceStateForSubId1
+1368	Test that notifyChange is not called for these fields
+1369	Test that notifyChange is not called with no change in notifyChangeForSubIdAndField
+1370	Test that notifyChange is not called with no change in notifyChangeForSubId
+1371	Test that notifyChange is called by notifyChangeForSubIdAndField when the voice_reg_state  changes
+1372	Test that notifyChange is called by notifyChangeForSubId when the voice_reg_state changes
+1373	Add authority="sms" to given smsProvider
+1374	Add context to given smsProvider
+1375	Add given SmsProvider to mResolver with authority="sms" so that  mResolver can send queries to mSmsProvider
+1376	insert test contentValues
+1377	test for sms table
+1378	test for attachments table
+1379	insert test contentValues assertEquals(Uri.parse("content:sms/raw/1"),
+1380	Query and confirm contents.
+1381	Insert another two. assertEquals(Uri.parse("content:sms/raw/2"),
+1382	Mark as deleted.
+1383	The row should still be in table, with column "deleted" to be 1.
+1384	The deleted row should be purged.
+1385	Permanent delete all rows. assertEquals(Uri.parse("content:sms/raw/1"),
+1386	 close mDbHelper database object
+1387	Set up the sms tables
+1388	Cursor with parts of Mms.
+1389	SMIL
+1390	Text part
+1391	 Attachments
+1392	 Cursor with addresses of Mms.
+1393	 Adding random keys to JSON to test handling it by the BackupAgent on restore.
+1394	Smil part.
+1395	Image attachment part.
+1396	Part of mms.
+1397	Address.
+1398	the upgraded db must have the APN_SET_ID field
+1399	the upgraded db must have the Telephony.Carriers.CARRIER_ID field
+1400	the upgraded db must have the Telephony.Carriers.CARRIER_ID field
+1401	compare upgraded carriers table to a carriers table created from scratch
+1402	compare upgraded siminfo table to siminfo table created from scratch
+1403	Set up the carriers table without any fields added in onUpgrade  since these are the initial fields, there is no need to update this test fixture in  the future
+1404	set up the siminfo table without any fields added in onUpgrade  since these are the initial fields, there is no need to update this test fixture in  the future
+1405	Used to test the path for URL_TELEPHONY_USING_SUBID with subid 1
+1406	Used to test the "restore to default"
+1407	Constants for DPC related tests. private static final Uri URI_DPC = Uri.parse("content:telephony/carriers/dpc");
+1408	return test subId 0 for all operators
+1409	Add authority="telephony" to given telephonyProvider
+1410	Add context to given telephonyProvider
+1411	Add given telephonyProvider to mResolver with authority="telephony" so that  mResolver can send queries to mTelephonyProvider
+1412	Gives permission to write to the APN table within the MockContext
+1413	insert 2 test contentValues
+1414	get values in table
+1415	verify that inserted values match results of query
+1416	Populate the sim info db with int-format entries
+1417	 Run the upgrade helper on all the sim info entries.
+1418	Loop through and make sure that everything got filled in correctly.
+1419	insert 2 test contentValues
+1420	use URL_ID to update row2 apn so it conflicts with row1
+1421	verify that only 1 APN now exists and it has the fields from row1 and row2
+1422	insert test contentValues
+1423	get values in table
+1424	verify that inserted values match results of query
+1425	delete test content
+1426	verify that deleted values are gone
+1427	insert test contentValues
+1428	get values in table
+1429	verify that inserted values match results of query
+1430	delete test content
+1431	verify that deleted values are gone
+1432	insert test contentValues
+1433	get values in table
+1434	verify that inserted values match results of query
+1435	delete test content
+1436	verify that deleted values are gone
+1437	Insert DPC record.
+1438	Insert non-DPC record.
+1439	Set enforced = false.
+1440	Verify that enforced is set to false in TelephonyProvider.
+1441	Verify URL_FILTERED query only returns non-DPC record.
+1442	Verify that URL_FILTERED_ID cannot get DPC record.
+1443	Set enforced = true.
+1444	Verify that enforced is set to true in TelephonyProvider.
+1445	Verify URL_FILTERED query only returns DPC record.
+1446	Verify that URL_FILTERED_ID can get DPC record.
+1447	Delete testing records.
+1448	Insert DPC record.
+1449	Insert non-DPC record.
+1450	Verify URL_TELEPHONY query only returns non-DPC record.
+1451	Verify URI_TELEPHONY updates only non-DPC records.
+1452	Verify that non-DPC records are updated.
+1453	Verify that DPC records are not updated.
+1454	Verify URI_TELEPHONY deletes only non-DPC records.
+1455	Delete remaining test records.
+1456	Insert DPC record.
+1457	Insert non-DPC record.
+1458	Verify that URI_DPC query only returns DPC records.
+1459	Verify that URI_DPC_ID updates only DPC records.
+1460	Verify that non-DPC records are not updated.
+1461	Verify that DPC records are updated.
+1462	Test URI_DPC_ID deletes only DPC records.
+1463	Delete remaining test records.
+1464	Insert DPC record 1.
+1465	Insert conflicting DPC record.
+1466	Verity that conflicting DPC record is not inserted.
+1467	Insert DPC record 2.
+1468	Update DPC record 2 to the values of DPC record 1.
+1469	Verify that database is not updated.
+1470	Delete test records.
+1471	Test insert().
+1472	Should catch SecurityException.
+1473	 Test query().
+1474	Should catch SecurityException.
+1475	Should catch SecurityException.
+1476	Test update().
+1477	Should catch SecurityException.
+1478	Should catch SecurityException.
+1479	 Test delete().
+1480	Should catch SecurityException.
+1481	insert user deleted APN
+1482	insert APN that conflicts with edited APN
+1483	Assert that the conflicting APN is merged into the existing user-edited APN, so only 1  APN exists in the db
+1484	insert user deleted APN
+1485	insert APN that conflicts with edited APN
+1486	Assert that the conflicting APN is merged into the existing user-deleted APN.  Entries marked deleted will not show up in queries so we verify that no APNs can  be seen
+1487	create APNs
+1488	insert APNs  TODO if using URL_TELEPHONY, SubscriptionManager.getDefaultSubscriptionId() returns -1
+1489	set preferred apn
+1490	 query preferred APN
+1491	verify that preferred apn was set and retreived
+1492	create APNs
+1493	insert APNs  TODO if using URL_TELEPHONY, SubscriptionManager.getDefaultSubscriptionId() returns -1
+1494	 query APN with default APN_SET_ID
+1495	query APN with APN_SET_ID=1
+1496	create APNs
+1497	insert APNs  we explicitly include subid, as SubscriptionManager.getDefaultSubscriptionId() returns -1
+1498	 before there's a preferred APN set, assert that all APNs are returned
+1499	set the APN from values3 (apn_set_id = 1) to the preferred APN
+1500	query APN with PREFERAPNSET url  explicitly include SUB_ID, as SubscriptionManager.getDefaultSubscriptionId() returns -1
+1501	setup for multi-SIM
+1502	create APN to be deleted (including MVNO values)
+1503	insert APNs
+1504	restore to default
+1505	get values in table
+1506	create APN to be deleted (not include MVNO values)
+1507	insert APN
+1508	restore to default
+1509	verify that deleted result match results of query
+1510	setup for single-SIM
+1511	restore to default
+1512	verify that deleted values are gone
+1513	insert test contentValues
+1514	update wfc_enabled
+1515	update other fields
+1516	update WFC using subId
+1517	Test on getCurrentAPNList() step 1
+1518	Insert the APN and DB only have the MCC/MNC and MVNO APN
+1519	Query DB
+1520	Test on getCurrentAPNList() step 2
+1521	Insert the APN and DB only have the MNO APN
+1522	Query DB
+1523	 close mDbHelper database object
+1524	Set up the carriers table
+1525	set up the siminfo table
